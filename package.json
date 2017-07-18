@@ -1,0 +1,24 @@
+{
+  "name": "mynote",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "gitbook serve ./content ./gh-pages",
+    "deploy": "node ./scripts/deploy-gh-pages.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiaoyu311/xiaoyu-note.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xiaoyu311/xiaoyu-note/issues"
+  },
+  "homepage": "https://github.com/xiaoyu311/xiaoyu-note#readme",
+  "dependencies": {
+    "gh-pages": "^1.0.0"
+  }
+}
