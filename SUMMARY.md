@@ -2,4 +2,4 @@
 
 * [Introduction](README.md)
 * 第章
-  * [第一小节：学习git](./redux/index.md)
+  * [第一小节：学ssss习git](./redux/index.md)
