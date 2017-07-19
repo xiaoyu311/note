@@ -22,9 +22,7 @@ git基本命令如下：
 
 * <code>mkdir test text</code> 当前目录下创建文件夹test 和 text
 
-* <code>mkdir test/text</code> 在文件夹test下创建text文件夹，test文件夹不存在的时候需要加参数 p 如下：
-
-* <code>mkdir -p test/text</code>
+* <code>mkdir test/text</code> 在文件夹test下创建text文件夹，test文件夹不存在的时候需要加参数 p <code>mkdir -p test/text</code>
 
 * <code>touch index.html</code> 创建一个index.html文件
 
