@@ -1,0 +1,351 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第一小结：简单的Git命令 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="gitbook.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    第一章 Git相关操作
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1" data-path="githandle.html">
+            
+                <a href="githandle.html">
+            
+                    
+                    第一小结：简单的Git命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="gitbook.html">
+            
+                <a href="gitbook.html">
+            
+                    
+                    第二小节：使用Gitbook来做笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >第一小结：简单的Git命令</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7B80;&#x5355;&#x7684;git&#x547D;&#x4EE4;&#x662F;&#x7A0B;&#x5E8F;&#x5458;&#x7684;&#x5FC5;&#x4E0D;&#x53EF;&#x5C11;&#x7684;&#x77E5;&#x8BC6;&#x3002;">&#x7B80;&#x5355;&#x7684;git&#x547D;&#x4EE4;&#x662F;&#x7A0B;&#x5E8F;&#x5458;&#x7684;&#x5FC5;&#x4E0D;&#x53EF;&#x5C11;&#x7684;&#x77E5;&#x8BC6;&#x3002;</h1>
+<h3 id="&#x9996;&#x5148;&#x5C31;&#x662F;&#x5B89;&#x88C5;gitbash">&#x9996;&#x5148;&#x5C31;&#x662F;&#x5B89;&#x88C5;gitbash</h3>
+<p>&#x6253;&#x5F00;&#x547D;&#x4EE4;&#x884C;&#x5F53;&#x524D;&#x663E;&#x793A;&#x7684; <code>~</code> &#x8868;&#x793A;&#x7528;&#x6237;&#x4E3B;&#x76EE;&#x5F55;&#x3002;</p>
+<p>git&#x57FA;&#x672C;&#x547D;&#x4EE4;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li><p><code>cd</code> &#x5C31;&#x662F;&#x76F4;&#x63A5;&#x8DF3;&#x8F6C;&#x5230;&#x7528;&#x6237;&#x4E3B;&#x76EE;&#x5F55;&#x3002;</p>
+</li>
+<li><p><code>ls</code> &#x67E5;&#x770B;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
+</li>
+<li><p><code>ls -s</code> &#x67E5;&#x770B;&#x5BF9;&#x5E94;&#x6587;&#x4EF6;&#x7684;&#x547D;&#x4EE4;&#x6743;&#x9650;</p>
+</li>
+<li><p><code>cd ../</code> &#x6216; <code>cd ..</code> &#x56DE;&#x5230;&#x4E0A;&#x4E00;&#x7EA7;</p>
+</li>
+<li><p><code>cd/</code> &#x56DE;&#x5230;&#x9876;&#x7EA7;&#x76EE;&#x5F55;</p>
+</li>
+<li><p><code>cd D:</code> &#x8DF3;&#x5230;D&#x76D8;</p>
+</li>
+<li><p><code>cd .test</code> &#x8DF3;&#x5230;test&#x6587;&#x4EF6;</p>
+</li>
+<li><p><code>mkdir test text</code> &#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#x5939;test &#x548C; text</p>
+</li>
+<li><p><code>mkdir test/text</code> &#x5728;&#x6587;&#x4EF6;&#x5939;test&#x4E0B;&#x521B;&#x5EFA;text&#x6587;&#x4EF6;&#x5939;&#xFF0C;test&#x6587;&#x4EF6;&#x5939;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x65F6;&#x5019;&#x9700;&#x8981;&#x52A0;&#x53C2;&#x6570; p &#x5982;&#x4E0B;&#xFF1A;</p>
+</li>
+<li><p><code>mkdir -p test/text</code></p>
+</li>
+<li><p><code>touch index.html</code> &#x521B;&#x5EFA;&#x4E00;&#x4E2A;index.html&#x6587;&#x4EF6;</p>
+</li>
+<li><p><code>rm index.html</code> &#x5220;&#x9664;&#x6587;&#x4EF6;   </p>
+</li>
+<li><p><code>rm test -r</code> &#x5220;&#x9664;&#x6587;&#x4EF6;&#x5939;</p>
+</li>
+<li><p><code>rm test -rf</code> &#x5F3A;&#x5236;&#x5220;&#x9664;&#x6587;&#x4EF6;&#x5939;</p>
+</li>
+<li><p><code>rm test/* -r</code> &#x5220;&#x9664;test&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x5939;</p>
+</li>
+<li><p><code>cp text test -r</code> &#x628A;text&#x590D;&#x5236;&#x5230;test&#x6587;&#x4EF6;&#x5939;&#x4E0B;</p>
+</li>
+<li><p><code>mv index.html text</code> &#x628A;index.html&#x526A;&#x5207;&#x5230;text&#x6587;&#x4EF6;&#x5939;&#x4E2D;</p>
+</li>
+<li><p><code>mv text test</code> &#x5C06;text&#x6587;&#x4EF6;&#x5939;&#x547D;&#x540D;&#x4E3A;test</p>
+</li>
+<li><p><code>cat index.html</code> &#x9884;&#x89C8;index.html&#x6587;&#x4EF6;</p>
+</li>
+<li><p><code>du -sh index.html</code> &#x67E5;&#x770B;test&#x6587;&#x4EF6;&#x5939;&#x7684;&#x5927;&#x5C0F;</p>
+</li>
+<li><p><code>vi index.html</code> &#x8FDB;&#x5165;index.html&#x6587;&#x4EF6;</p>
+</li>
+<li><p><code>git clone git@github.com:xiaoyu311/xiaoyu311.github.io.git mygit</code> &#x514B;&#x9686;&#x8FDC;&#x7AEF;&#x4ED3;&#x5E93;&#x5230;&#x672C;&#x5730;mygit&#x6587;&#x4EF6;&#x5939;&#x4E0B;</p>
+</li>
+<li><p><code>git log</code> &#x67E5;&#x770B;&#x7248;&#x672C;&#x5386;&#x53F2;</p>
+</li>
+<li><p><code>git status</code> &#x67E5;&#x770B;&#x4ED3;&#x5E93;&#x72B6;&#x6001;</p>
+</li>
+<li><p><code>git add .</code> &#x8DDF;&#x8E2A;&#x6240;&#x6709;&#x4FEE;&#x6539;</p>
+</li>
+<li><p><code>git commit -m &apos;my commit&apos;</code> &#x7248;&#x672C;&#x7559;&#x8A00;</p>
+</li>
+<li><p><code>git push</code> &#x63A8;&#x9001;&#x5230;&#x8FDC;&#x7AEF;&#x4ED3;&#x5E93;</p>
+</li>
+</ul>
+<blockquote>
+<p>&#x5728;&#x63A8;&#x9001;&#x8FDC;&#x7AEF;&#x4ED3;&#x5E93;&#x65F6;&#x5019;&#xFF0C;&#x4E00;&#x822C;&#x4F1A;<code>git pull</code> &#x6765;&#x786E;&#x4FDD;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x5DF2;&#x7ECF;&#x662F;&#x6700;&#x65B0;&#x7248;&#x672C;&#x3002;</p>
+</blockquote>
+<ul>
+<li><p><code>git diff</code> &#x67E5;&#x770B;&#x4FEE;&#x6539;</p>
+</li>
+<li><p><code>git checkout</code> &#x8FD8;&#x539F;&#x4FEE;&#x6539;</p>
+</li>
+<li><p><code>git checkout .</code> &#x8FD8;&#x539F;&#x6240;&#x6709;&#x4FEE;&#x6539;</p>
+</li>
+<li><p><code>git init</code> &#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A;&#x4ED3;&#x5E93;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x4E2A;<code>.git</code> &#x9690;&#x85CF;&#x6587;&#x4EF6;&#x5939;&#x3002;</p>
+</li>
+<li><p><code>ssh-keygen</code> &#x5C06;&#x4F1A;&#x751F;&#x6210;&#x5BC6;&#x94A5;&#x6587;&#x4EF6;&#x548C;&#x79C1;&#x94A5;&#x6587;&#x4EF6;&#xFF0C;id_rsa,id_rsa.pub&#x6216;id_dsa,id_dsa.pub&#x3002;</p>
+</li>
+</ul>
+<p>&#x8FD9;&#x65F6;&#x5019;&#x9700;&#x8981;&#x628A;&#x751F;&#x6210;&#x7684;&#x516C;&#x94A5;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;id_dsa.pub&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x5B57;&#x7B26;&#x62F7;&#x8D1D;&#x5230;&#x8FDC;&#x7AEF;git&#x4ED3;&#x5E93;&#x4E2D;&#xFF0C;&#x6B65;&#x9AA4;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li><code>settings=&gt;SSH and GPG keys =&gt; New SSH key</code></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="gitbook.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 第二小节：使用Gitbook来做笔记">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第一小结：简单的Git命令","level":"1.2.1","depth":2,"next":{"title":"第二小节：使用Gitbook来做笔记","level":"1.2.2","depth":2,"path":"Git/gitbook.md","ref":"./Git/gitbook.md","articles":[]},"previous":{"title":"第一章 Git相关操作","level":"1.2","depth":1,"ref":"","articles":[{"title":"第一小结：简单的Git命令","level":"1.2.1","depth":2,"path":"Git/githandle.md","ref":"./Git/githandle.md","articles":[]},{"title":"第二小节：使用Gitbook来做笔记","level":"1.2.2","depth":2,"path":"Git/gitbook.md","ref":"./Git/gitbook.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Git/githandle.md","mtime":"2017-07-18T23:55:27.717Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-18T23:58:24.908Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
