@@ -12,5 +12,5 @@
   - [第二小结：react中state的使用](./redux/redux_state.md)
   - [第三小结：store数据传递和修改](./redux/redux_store.md)
 * 小雨的面试（仅供参考）
-  - [js原生基础](./JS/js.md)
-  - [React有关问题](./react/react.md)
+  - [js原生基础](./interview/js.md)
+  - [React有关问题](./interview/react.md)
