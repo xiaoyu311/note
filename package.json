@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "gitbook serve ./content ./gh-pages",
-    "deploy": "node ./scripts/deploy-gh-pages.js"
+    "build": "gitbook build ./content ./gh-pages",
+    "deploy": "node ./scripts/deploy-gh-pages.js",
+    "publish": "npm run build&&npm run deploy"
   },
   "repository": {
     "type": "git",
