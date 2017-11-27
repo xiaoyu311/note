@@ -2,9 +2,12 @@
 
 * [Introduction](README.md)
 * HTML
+  - [HTML5表单新特性](./html/input.md)
 * CSS
 * JS
+  - [location介绍](./JS/location.md)
 * VUE
+  - [$route](./vue/route.md)
 * VUEX
 * Git
  - [简单的Git命令](./Git/githandle.md)
