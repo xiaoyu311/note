@@ -3,9 +3,14 @@
 * [Introduction](README.md)
 * HTML
   - [HTML5表单新特性](./html/input.md)
+  - [HTML新标签](./html/newEle.md)
 * CSS
+  - [项目初始化样式](./css/init.md)
 * JS
   - [location介绍](./JS/location.md)
+  - [screen对象](./JS/screen.md)
+  - [获取原生css属性](./JS/attr.md)
+  - [数组的方法](./JS/array.md)
 * VUE
   - [$route](./vue/route.md)
 * VUEX
