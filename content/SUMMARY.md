@@ -11,6 +11,8 @@
   - [screen对象](./JS/screen.md)
   - [获取原生css属性](./JS/attr.md)
   - [数组的方法](./JS/array.md)
+  - [requestAnimationFrame](./JS/requestAnimationFrame.md)
+  - [EVENT相关介绍](./JS/event.md)
 * VUE
   - [$route](./vue/route.md)
 * VUEX
