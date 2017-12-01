@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>redux介绍与环境准备 · GitBook</title>
+        <title>screen对象 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,8 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="redux_state.html" />
+    <link rel="next" href="attr.html" />
     
+    
+    <link rel="prev" href="location.html" />
     
 
     </head>
@@ -191,9 +193,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../JS/location.html">
+        <li class="chapter " data-level="1.4.1" data-path="location.html">
             
-                <a href="../JS/location.html">
+                <a href="location.html">
             
                     
                     location介绍
@@ -204,9 +206,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="../JS/screen.html">
+        <li class="chapter active" data-level="1.4.2" data-path="screen.html">
             
-                <a href="../JS/screen.html">
+                <a href="screen.html">
             
                     
                     screen对象
@@ -217,9 +219,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.3" data-path="../JS/attr.html">
+        <li class="chapter " data-level="1.4.3" data-path="attr.html">
             
-                <a href="../JS/attr.html">
+                <a href="attr.html">
             
                     
                     获取原生css属性
@@ -230,9 +232,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.4" data-path="../JS/array.html">
+        <li class="chapter " data-level="1.4.4" data-path="array.html">
             
-                <a href="../JS/array.html">
+                <a href="array.html">
             
                     
                     数组的方法
@@ -243,9 +245,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.5" data-path="../JS/requestAnimationFrame.html">
+        <li class="chapter " data-level="1.4.5" data-path="requestAnimationFrame.html">
             
-                <a href="../JS/requestAnimationFrame.html">
+                <a href="requestAnimationFrame.html">
             
                     
                     requestAnimationFrame
@@ -256,9 +258,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.6" data-path="../JS/event.html">
+        <li class="chapter " data-level="1.4.6" data-path="event.html">
             
-                <a href="../JS/event.html">
+                <a href="event.html">
             
                     
                     EVENT相关介绍
@@ -423,9 +425,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.9.1" data-path="redux_start.html">
+        <li class="chapter " data-level="1.9.1" data-path="../redux/redux_start.html">
             
-                <a href="redux_start.html">
+                <a href="../redux/redux_start.html">
             
                     
                     redux介绍与环境准备
@@ -436,9 +438,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.2" data-path="redux_state.html">
+        <li class="chapter " data-level="1.9.2" data-path="../redux/redux_state.html">
             
-                <a href="redux_state.html">
+                <a href="../redux/redux_state.html">
             
                     
                     react中state的使用
@@ -449,9 +451,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.3" data-path="redux_store.html">
+        <li class="chapter " data-level="1.9.3" data-path="../redux/redux_store.html">
             
-                <a href="redux_store.html">
+                <a href="../redux/redux_store.html">
             
                     
                     store数据传递和修改
@@ -593,7 +595,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >redux介绍与环境准备</a>
+        <a href=".." >screen对象</a>
     </h1>
 </div>
 
@@ -608,13 +610,18 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x8BA4;&#x8BC6;redux&#x548C;redux&#x73AF;&#x5883;&#x914D;&#x7F6E;">&#x8BA4;&#x8BC6;redux&#x548C;redux&#x73AF;&#x5883;&#x914D;&#x7F6E;</h1>
-<h3 id="&#x5B9A;&#x4E49;redux&#xFF1A;">&#x5B9A;&#x4E49;redux&#xFF1A;</h3>
-<p>Redux&#x662F;&#x4E00;&#x4E2A;&#x914D;&#x4E2A;React&#x4F7F;&#x7528;&#x7684;&#x6570;&#x636E;&#x6D41;&#x7BA1;&#x7406;&#x5DE5;&#x5177;&#xFF0C;&#x8D1F;&#x8D23;&#x7EC4;&#x4EF6;&#x95F4;&#x901A;&#x4FE1;&#x3002;</p>
-<h3 id="&#x914D;&#x7F6E;&#x73AF;&#x5883;">&#x914D;&#x7F6E;&#x73AF;&#x5883;</h3>
-<p>&#x4F7F;&#x7528;create-react-app &#x6765;&#x521B;&#x5EFA;&#x57FA;&#x672C;webpack-es6-react&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x3002;</p>
-<pre><code>  create-react-app redux-dom
-</code></pre><p>&#x7136;&#x540E;&#x5220;&#x9664;&#x4E00;&#x4E9B;&#x4E0D;&#x9700;&#x8981;&#x7684;&#x6587;&#x4EF6;&#x521B;&#x5EFA;&#x4E24;&#x4E2A;&#x7EC4;&#x4EF6; <code>Postbody</code> &#x548C; <code>CommentBox</code></p>
+                                <h3 id="window&#x4E0B;&#x7684;screen&#x5BF9;&#x8C61;">window&#x4E0B;&#x7684;screen&#x5BF9;&#x8C61;</h3>
+<pre><code class="lang-js"> screen.availWidth
+</code></pre>
+<blockquote>
+<p>&#x5F97;&#x5230;&#x7684;&#x662F;&#x8BBF;&#x95EE;&#x8005;&#x5C4F;&#x5E55;&#x7684;&#x5BBD;&#x5EA6;&#xFF0C;&#x51CF;&#x53BB;&#x754C;&#x9762;&#x7279;&#x6027;&#x3001;&#x548C;&#x7A97;&#x53E3;&#x4EFB;&#x52A1;&#x680F;</p>
+</blockquote>
+<pre><code class="lang-js">  screen.height =&gt; <span class="hljs-comment">//864</span>
+  screen.availHeight =&gt; <span class="hljs-comment">//824</span>
+</code></pre>
+<blockquote>
+<p>&#x61C2;&#x4E86;&#x5427;!!!</p>
+</blockquote>
 
                                 
                                 </section>
@@ -642,8 +649,12 @@
 
             
                 
+                <a href="location.html" class="navigation navigation-prev " aria-label="Previous page: location介绍">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="redux_state.html" class="navigation navigation-next navigation-unique" aria-label="Next page: react中state的使用">
+                
+                <a href="attr.html" class="navigation navigation-next " aria-label="Next page: 获取原生css属性">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -654,7 +665,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"redux介绍与环境准备","level":"1.9.1","depth":2,"next":{"title":"react中state的使用","level":"1.9.2","depth":2,"path":"redux/redux_state.md","ref":"./redux/redux_state.md","articles":[]},"previous":{"title":"redux","level":"1.9","depth":1,"ref":"","articles":[{"title":"redux介绍与环境准备","level":"1.9.1","depth":2,"path":"redux/redux_start.md","ref":"./redux/redux_start.md","articles":[]},{"title":"react中state的使用","level":"1.9.2","depth":2,"path":"redux/redux_state.md","ref":"./redux/redux_state.md","articles":[]},{"title":"store数据传递和修改","level":"1.9.3","depth":2,"path":"redux/redux_store.md","ref":"./redux/redux_store.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"redux/redux_start.md","mtime":"2017-11-26T15:35:18.825Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-01T16:07:03.074Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"screen对象","level":"1.4.2","depth":2,"next":{"title":"获取原生css属性","level":"1.4.3","depth":2,"path":"JS/attr.md","ref":"./JS/attr.md","articles":[]},"previous":{"title":"location介绍","level":"1.4.1","depth":2,"path":"JS/location.md","ref":"./JS/location.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"JS/screen.md","mtime":"2017-11-28T16:10:52.068Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-01T16:07:03.074Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

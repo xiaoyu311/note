@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>redux介绍与环境准备 · GitBook</title>
+        <title>EVENT相关介绍 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,8 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="redux_state.html" />
     
+    <link rel="prev" href="requestAnimationFrame.html" />
     
 
     </head>
@@ -191,9 +191,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../JS/location.html">
+        <li class="chapter " data-level="1.4.1" data-path="location.html">
             
-                <a href="../JS/location.html">
+                <a href="location.html">
             
                     
                     location介绍
@@ -204,9 +204,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="../JS/screen.html">
+        <li class="chapter " data-level="1.4.2" data-path="screen.html">
             
-                <a href="../JS/screen.html">
+                <a href="screen.html">
             
                     
                     screen对象
@@ -217,9 +217,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.3" data-path="../JS/attr.html">
+        <li class="chapter " data-level="1.4.3" data-path="attr.html">
             
-                <a href="../JS/attr.html">
+                <a href="attr.html">
             
                     
                     获取原生css属性
@@ -230,9 +230,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.4" data-path="../JS/array.html">
+        <li class="chapter " data-level="1.4.4" data-path="array.html">
             
-                <a href="../JS/array.html">
+                <a href="array.html">
             
                     
                     数组的方法
@@ -243,9 +243,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.5" data-path="../JS/requestAnimationFrame.html">
+        <li class="chapter " data-level="1.4.5" data-path="requestAnimationFrame.html">
             
-                <a href="../JS/requestAnimationFrame.html">
+                <a href="requestAnimationFrame.html">
             
                     
                     requestAnimationFrame
@@ -256,9 +256,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.6" data-path="../JS/event.html">
+        <li class="chapter active" data-level="1.4.6" data-path="event.html">
             
-                <a href="../JS/event.html">
+                <a href="event.html">
             
                     
                     EVENT相关介绍
@@ -423,9 +423,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.9.1" data-path="redux_start.html">
+        <li class="chapter " data-level="1.9.1" data-path="../redux/redux_start.html">
             
-                <a href="redux_start.html">
+                <a href="../redux/redux_start.html">
             
                     
                     redux介绍与环境准备
@@ -436,9 +436,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.2" data-path="redux_state.html">
+        <li class="chapter " data-level="1.9.2" data-path="../redux/redux_state.html">
             
-                <a href="redux_state.html">
+                <a href="../redux/redux_state.html">
             
                     
                     react中state的使用
@@ -449,9 +449,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.3" data-path="redux_store.html">
+        <li class="chapter " data-level="1.9.3" data-path="../redux/redux_store.html">
             
-                <a href="redux_store.html">
+                <a href="../redux/redux_store.html">
             
                     
                     store数据传递和修改
@@ -593,7 +593,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >redux介绍与环境准备</a>
+        <a href=".." >EVENT相关介绍</a>
     </h1>
 </div>
 
@@ -608,13 +608,34 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x8BA4;&#x8BC6;redux&#x548C;redux&#x73AF;&#x5883;&#x914D;&#x7F6E;">&#x8BA4;&#x8BC6;redux&#x548C;redux&#x73AF;&#x5883;&#x914D;&#x7F6E;</h1>
-<h3 id="&#x5B9A;&#x4E49;redux&#xFF1A;">&#x5B9A;&#x4E49;redux&#xFF1A;</h3>
-<p>Redux&#x662F;&#x4E00;&#x4E2A;&#x914D;&#x4E2A;React&#x4F7F;&#x7528;&#x7684;&#x6570;&#x636E;&#x6D41;&#x7BA1;&#x7406;&#x5DE5;&#x5177;&#xFF0C;&#x8D1F;&#x8D23;&#x7EC4;&#x4EF6;&#x95F4;&#x901A;&#x4FE1;&#x3002;</p>
-<h3 id="&#x914D;&#x7F6E;&#x73AF;&#x5883;">&#x914D;&#x7F6E;&#x73AF;&#x5883;</h3>
-<p>&#x4F7F;&#x7528;create-react-app &#x6765;&#x521B;&#x5EFA;&#x57FA;&#x672C;webpack-es6-react&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x3002;</p>
-<pre><code>  create-react-app redux-dom
-</code></pre><p>&#x7136;&#x540E;&#x5220;&#x9664;&#x4E00;&#x4E9B;&#x4E0D;&#x9700;&#x8981;&#x7684;&#x6587;&#x4EF6;&#x521B;&#x5EFA;&#x4E24;&#x4E2A;&#x7EC4;&#x4EF6; <code>Postbody</code> &#x548C; <code>CommentBox</code></p>
+                                <h3 id="event&#x76F8;&#x5173;&#x4ECB;&#x7ECD;">event&#x76F8;&#x5173;&#x4ECB;&#x7ECD;</h3>
+<ul>
+<li><p>addEventListener(ele, listener, [options])</p>
+<ul>
+<li>options &#x53EF;&#x9009;&#x53C2;&#x6570;
+&#x4E00;&#x4E2A;&#x6307;&#x5B9A;&#x6709;&#x5173; listener &#x5C5E;&#x6027;&#x7684;&#x53EF;&#x9009;&#x53C2;&#x6570;&#x5BF9;&#x8C61;&#x3002;&#x53EF;&#x7528;&#x7684;&#x9009;&#x9879;&#x5982;&#x4E0B;&#xFF1A;</li>
+<li>capture:  Boolean&#xFF0C;&#x8868;&#x793A; listener &#x4F1A;&#x5728;&#x8BE5;&#x7C7B;&#x578B;&#x7684;&#x4E8B;&#x4EF6;&#x6355;&#x83B7;&#x9636;&#x6BB5;&#x4F20;&#x64AD;&#x5230;&#x8BE5; EventTarget &#x65F6;&#x89E6;&#x53D1;&#x3002;</li>
+<li>once:  Boolean&#xFF0C;&#x8868;&#x793A; listener &#x5728;&#x6DFB;&#x52A0;&#x4E4B;&#x540E;&#x6700;&#x591A;&#x53EA;&#x8C03;&#x7528;&#x4E00;&#x6B21;&#x3002;&#x5982;&#x679C;&#x662F; true&#xFF0C; listener &#x4F1A;&#x5728;&#x5176;&#x88AB;&#x8C03;&#x7528;&#x4E4B;&#x540E;&#x81EA;&#x52A8;&#x79FB;&#x9664;&#x3002;</li>
+<li>passive: Boolean&#xFF0C;&#x8868;&#x793A; listener &#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x8C03;&#x7528; preventDefault()&#x3002;&#x5982;&#x679C; listener &#x4ECD;&#x7136;&#x8C03;&#x7528;&#x4E86;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x5C06;&#x4F1A;&#x5FFD;&#x7565;&#x5B83;&#x5E76;&#x629B;&#x51FA;&#x4E00;&#x4E2A;&#x63A7;&#x5236;&#x53F0;&#x8B66;&#x544A;&#x3002;</li>
+<li>mozSystemGroup: &#x53EA;&#x80FD;&#x5728; XBL &#x6216;&#x8005;&#x662F; Firefox&apos; chrome &#x4F7F;&#x7528;&#xFF0C;&#x8FD9;&#x662F;&#x4E2A; Boolean&#xFF0C;&#x8868;&#x793A; listener &#x88AB;&#x6DFB;&#x52A0;&#x5230; system group&#x3002;</li>
+</ul>
+</li>
+</ul>
+<p>&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x4E8B;&#x4EF6;</p>
+<pre><code class="lang-js"> <span class="hljs-keyword">var</span> div = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;div&apos;</span>);
+ addEventListener(<span class="hljs-string">&apos;click&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&#x6211;&#x88AB;&#x6DFB;&#x52A0;&#x4E86;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;&apos;</span>)
+ }, <span class="hljs-literal">false</span>);
+</code></pre>
+<p>&#x4F7F;&#x7528; passive &#x6539;&#x5584;&#x7684;&#x6EDA;&#x5C4F;&#x6027;&#x80FD;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> elem = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;elem&apos;</span>); 
+elem.addEventListener(<span class="hljs-string">&apos;touchmove&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">listener</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-comment">/* do something */</span> }, { passive: <span class="hljs-literal">true</span> });
+</code></pre>
+<pre><code class="lang-js">  <span class="hljs-built_in">document</span>.documentElement
+</code></pre>
+<blockquote>
+<p>&#x83B7;&#x53D6;&#x5230;&#x7684;&#x4E8B;html&#x6807;&#x7B7E;&#xFF0C;&#x5E76;&#x4E14;&#x542B;&#x6709;&#x91CC;&#x9762;&#x7684;&#x6240;&#x6709;&#x5143;&#x7D20;</p>
+</blockquote>
 
                                 
                                 </section>
@@ -642,10 +663,10 @@
 
             
                 
-                
-                <a href="redux_state.html" class="navigation navigation-next navigation-unique" aria-label="Next page: react中state的使用">
-                    <i class="fa fa-angle-right"></i>
+                <a href="requestAnimationFrame.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: requestAnimationFrame">
+                    <i class="fa fa-angle-left"></i>
                 </a>
+                
                 
             
         
@@ -654,7 +675,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"redux介绍与环境准备","level":"1.9.1","depth":2,"next":{"title":"react中state的使用","level":"1.9.2","depth":2,"path":"redux/redux_state.md","ref":"./redux/redux_state.md","articles":[]},"previous":{"title":"redux","level":"1.9","depth":1,"ref":"","articles":[{"title":"redux介绍与环境准备","level":"1.9.1","depth":2,"path":"redux/redux_start.md","ref":"./redux/redux_start.md","articles":[]},{"title":"react中state的使用","level":"1.9.2","depth":2,"path":"redux/redux_state.md","ref":"./redux/redux_state.md","articles":[]},{"title":"store数据传递和修改","level":"1.9.3","depth":2,"path":"redux/redux_store.md","ref":"./redux/redux_store.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"redux/redux_start.md","mtime":"2017-11-26T15:35:18.825Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-01T16:07:03.074Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"EVENT相关介绍","level":"1.4.6","depth":2,"next":{"title":"VUE","level":"1.5","depth":1,"ref":"","articles":[{"title":"$route","level":"1.5.1","depth":2,"path":"vue/route.md","ref":"./vue/route.md","articles":[]}]},"previous":{"title":"requestAnimationFrame","level":"1.4.5","depth":2,"path":"JS/requestAnimationFrame.md","ref":"./JS/requestAnimationFrame.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"JS/event.md","mtime":"2017-11-30T16:38:06.255Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-01T16:07:03.074Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

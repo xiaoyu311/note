@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>redux介绍与环境准备 · GitBook</title>
+        <title>项目初始化样式 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -56,8 +56,6 @@
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
-    
-    <link rel="next" href="redux_state.html" />
     
     
 
@@ -159,9 +157,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="../css/init.html">
+        <li class="chapter active" data-level="1.3.1" data-path="init.html">
             
-                <a href="../css/init.html">
+                <a href="init.html">
             
                     
                     项目初始化样式
@@ -423,9 +421,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.9.1" data-path="redux_start.html">
+        <li class="chapter " data-level="1.9.1" data-path="../redux/redux_start.html">
             
-                <a href="redux_start.html">
+                <a href="../redux/redux_start.html">
             
                     
                     redux介绍与环境准备
@@ -436,9 +434,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.2" data-path="redux_state.html">
+        <li class="chapter " data-level="1.9.2" data-path="../redux/redux_state.html">
             
-                <a href="redux_state.html">
+                <a href="../redux/redux_state.html">
             
                     
                     react中state的使用
@@ -449,9 +447,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.3" data-path="redux_store.html">
+        <li class="chapter " data-level="1.9.3" data-path="../redux/redux_store.html">
             
-                <a href="redux_store.html">
+                <a href="../redux/redux_store.html">
             
                     
                     store数据传递和修改
@@ -593,7 +591,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >redux介绍与环境准备</a>
+        <a href=".." >项目初始化样式</a>
     </h1>
 </div>
 
@@ -608,13 +606,21 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x8BA4;&#x8BC6;redux&#x548C;redux&#x73AF;&#x5883;&#x914D;&#x7F6E;">&#x8BA4;&#x8BC6;redux&#x548C;redux&#x73AF;&#x5883;&#x914D;&#x7F6E;</h1>
-<h3 id="&#x5B9A;&#x4E49;redux&#xFF1A;">&#x5B9A;&#x4E49;redux&#xFF1A;</h3>
-<p>Redux&#x662F;&#x4E00;&#x4E2A;&#x914D;&#x4E2A;React&#x4F7F;&#x7528;&#x7684;&#x6570;&#x636E;&#x6D41;&#x7BA1;&#x7406;&#x5DE5;&#x5177;&#xFF0C;&#x8D1F;&#x8D23;&#x7EC4;&#x4EF6;&#x95F4;&#x901A;&#x4FE1;&#x3002;</p>
-<h3 id="&#x914D;&#x7F6E;&#x73AF;&#x5883;">&#x914D;&#x7F6E;&#x73AF;&#x5883;</h3>
-<p>&#x4F7F;&#x7528;create-react-app &#x6765;&#x521B;&#x5EFA;&#x57FA;&#x672C;webpack-es6-react&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x3002;</p>
-<pre><code>  create-react-app redux-dom
-</code></pre><p>&#x7136;&#x540E;&#x5220;&#x9664;&#x4E00;&#x4E9B;&#x4E0D;&#x9700;&#x8981;&#x7684;&#x6587;&#x4EF6;&#x521B;&#x5EFA;&#x4E24;&#x4E2A;&#x7EC4;&#x4EF6; <code>Postbody</code> &#x548C; <code>CommentBox</code></p>
+                                <h3 id="&#x6837;&#x5F0F;&#x521D;&#x59CB;&#x5316;&#x6837;&#x5F0F;&#x4ECB;&#x7ECD;">&#x6837;&#x5F0F;&#x521D;&#x59CB;&#x5316;&#x6837;&#x5F0F;&#x4ECB;&#x7ECD;</h3>
+<ul>
+<li><strong>-webkit-tap-highlight-color: transparent;</strong><blockquote>
+<p>&#x5F53;&#x7528;&#x6237;&#x70B9;&#x51FB;iOS&#x7684;Safari&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x7684;&#x94FE;&#x63A5;&#x6216;JavaScript&#x7684;&#x53EF;&#x70B9;&#x51FB;&#x7684;&#x5143;&#x7D20;&#x65F6;&#xFF0C;&#x8986;&#x76D6;&#x663E;&#x793A;&#x7684;&#x9AD8;&#x4EAE;&#x989C;&#x8272;&#x3002;</p>
+</blockquote>
+</li>
+<li><strong>-webkit-appearance: none;</strong> <blockquote>
+<p>&#x53BB;&#x9664;&#x79FB;&#x52A8;&#x7AEF;&#x82F9;&#x679C;&#x548C;&#x5B89;&#x5353;&#x9ED8;&#x8BA4;&#x6837;&#x5F0F;&#x4E0D;&#x4E00;&#x81F4;&#x95EE;&#x9898;</p>
+</blockquote>
+</li>
+<li><strong>-webkit-font-smoothing: antialiased;</strong><blockquote>
+<p>&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x4F7F;&#x9875;&#x9762;&#x4E0A;&#x7684;&#x5B57;&#x4F53;&#x6297;&#x952F;&#x9F7F;,&#x4F7F;&#x7528;&#x540E;&#x5B57;&#x4F53;&#x770B;&#x8D77;&#x6765;&#x4F1A;&#x66F4;&#x6E05;&#x6670;</p>
+</blockquote>
+</li>
+</ul>
 
                                 
                                 </section>
@@ -643,10 +649,6 @@
             
                 
                 
-                <a href="redux_state.html" class="navigation navigation-next navigation-unique" aria-label="Next page: react中state的使用">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
             
         
     </div>
@@ -654,7 +656,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"redux介绍与环境准备","level":"1.9.1","depth":2,"next":{"title":"react中state的使用","level":"1.9.2","depth":2,"path":"redux/redux_state.md","ref":"./redux/redux_state.md","articles":[]},"previous":{"title":"redux","level":"1.9","depth":1,"ref":"","articles":[{"title":"redux介绍与环境准备","level":"1.9.1","depth":2,"path":"redux/redux_start.md","ref":"./redux/redux_start.md","articles":[]},{"title":"react中state的使用","level":"1.9.2","depth":2,"path":"redux/redux_state.md","ref":"./redux/redux_state.md","articles":[]},{"title":"store数据传递和修改","level":"1.9.3","depth":2,"path":"redux/redux_store.md","ref":"./redux/redux_store.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"redux/redux_start.md","mtime":"2017-11-26T15:35:18.825Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-01T16:07:03.074Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"项目初始化样式","level":"1.3.1","depth":2,"next":{"title":"JS","level":"1.4","depth":1,"ref":"","articles":[{"title":"location介绍","level":"1.4.1","depth":2,"path":"JS/location.md","ref":"./JS/location.md","articles":[]},{"title":"screen对象","level":"1.4.2","depth":2,"path":"JS/screen.md","ref":"./JS/screen.md","articles":[]},{"title":"获取原生css属性","level":"1.4.3","depth":2,"path":"JS/attr.md","ref":"./JS/attr.md","articles":[]},{"title":"数组的方法","level":"1.4.4","depth":2,"path":"JS/array.md","ref":"./JS/array.md","articles":[]},{"title":"requestAnimationFrame","level":"1.4.5","depth":2,"path":"JS/requestAnimationFrame.md","ref":"./JS/requestAnimationFrame.md","articles":[]},{"title":"EVENT相关介绍","level":"1.4.6","depth":2,"path":"JS/event.md","ref":"./JS/event.md","articles":[]}]},"previous":{"title":"CSS","level":"1.3","depth":1,"ref":"","articles":[{"title":"项目初始化样式","level":"1.3.1","depth":2,"path":"css/init.md","ref":"./css/init.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"css/init.md","mtime":"2017-11-28T16:34:09.043Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-01T16:07:03.074Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

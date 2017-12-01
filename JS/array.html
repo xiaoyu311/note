@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>redux介绍与环境准备 · GitBook</title>
+        <title>数组的方法 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,8 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="redux_state.html" />
+    <link rel="next" href="requestAnimationFrame.html" />
     
+    
+    <link rel="prev" href="attr.html" />
     
 
     </head>
@@ -191,9 +193,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../JS/location.html">
+        <li class="chapter " data-level="1.4.1" data-path="location.html">
             
-                <a href="../JS/location.html">
+                <a href="location.html">
             
                     
                     location介绍
@@ -204,9 +206,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="../JS/screen.html">
+        <li class="chapter " data-level="1.4.2" data-path="screen.html">
             
-                <a href="../JS/screen.html">
+                <a href="screen.html">
             
                     
                     screen对象
@@ -217,9 +219,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.3" data-path="../JS/attr.html">
+        <li class="chapter " data-level="1.4.3" data-path="attr.html">
             
-                <a href="../JS/attr.html">
+                <a href="attr.html">
             
                     
                     获取原生css属性
@@ -230,9 +232,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.4" data-path="../JS/array.html">
+        <li class="chapter active" data-level="1.4.4" data-path="array.html">
             
-                <a href="../JS/array.html">
+                <a href="array.html">
             
                     
                     数组的方法
@@ -243,9 +245,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.5" data-path="../JS/requestAnimationFrame.html">
+        <li class="chapter " data-level="1.4.5" data-path="requestAnimationFrame.html">
             
-                <a href="../JS/requestAnimationFrame.html">
+                <a href="requestAnimationFrame.html">
             
                     
                     requestAnimationFrame
@@ -256,9 +258,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.6" data-path="../JS/event.html">
+        <li class="chapter " data-level="1.4.6" data-path="event.html">
             
-                <a href="../JS/event.html">
+                <a href="event.html">
             
                     
                     EVENT相关介绍
@@ -423,9 +425,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.9.1" data-path="redux_start.html">
+        <li class="chapter " data-level="1.9.1" data-path="../redux/redux_start.html">
             
-                <a href="redux_start.html">
+                <a href="../redux/redux_start.html">
             
                     
                     redux介绍与环境准备
@@ -436,9 +438,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.2" data-path="redux_state.html">
+        <li class="chapter " data-level="1.9.2" data-path="../redux/redux_state.html">
             
-                <a href="redux_state.html">
+                <a href="../redux/redux_state.html">
             
                     
                     react中state的使用
@@ -449,9 +451,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.3" data-path="redux_store.html">
+        <li class="chapter " data-level="1.9.3" data-path="../redux/redux_store.html">
             
-                <a href="redux_store.html">
+                <a href="../redux/redux_store.html">
             
                     
                     store数据传递和修改
@@ -593,7 +595,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >redux介绍与环境准备</a>
+        <a href=".." >数组的方法</a>
     </h1>
 </div>
 
@@ -608,13 +610,32 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x8BA4;&#x8BC6;redux&#x548C;redux&#x73AF;&#x5883;&#x914D;&#x7F6E;">&#x8BA4;&#x8BC6;redux&#x548C;redux&#x73AF;&#x5883;&#x914D;&#x7F6E;</h1>
-<h3 id="&#x5B9A;&#x4E49;redux&#xFF1A;">&#x5B9A;&#x4E49;redux&#xFF1A;</h3>
-<p>Redux&#x662F;&#x4E00;&#x4E2A;&#x914D;&#x4E2A;React&#x4F7F;&#x7528;&#x7684;&#x6570;&#x636E;&#x6D41;&#x7BA1;&#x7406;&#x5DE5;&#x5177;&#xFF0C;&#x8D1F;&#x8D23;&#x7EC4;&#x4EF6;&#x95F4;&#x901A;&#x4FE1;&#x3002;</p>
-<h3 id="&#x914D;&#x7F6E;&#x73AF;&#x5883;">&#x914D;&#x7F6E;&#x73AF;&#x5883;</h3>
-<p>&#x4F7F;&#x7528;create-react-app &#x6765;&#x521B;&#x5EFA;&#x57FA;&#x672C;webpack-es6-react&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x3002;</p>
-<pre><code>  create-react-app redux-dom
-</code></pre><p>&#x7136;&#x540E;&#x5220;&#x9664;&#x4E00;&#x4E9B;&#x4E0D;&#x9700;&#x8981;&#x7684;&#x6587;&#x4EF6;&#x521B;&#x5EFA;&#x4E24;&#x4E2A;&#x7EC4;&#x4EF6; <code>Postbody</code> &#x548C; <code>CommentBox</code></p>
+                                <h3 id="&#x6570;&#x7EC4;&#x7684;&#x65B9;&#x6CD5;">&#x6570;&#x7EC4;&#x7684;&#x65B9;&#x6CD5;</h3>
+<pre><code class="lang-js">  <span class="hljs-keyword">let</span> newArr = arr.concat([]);
+</code></pre>
+<blockquote>
+<p>&#x62F7;&#x8D1D;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x5427;</p>
+</blockquote>
+<pre><code class="lang-js">  <span class="hljs-keyword">let</span> bool = some(item =&gt; item == <span class="hljs-number">1</span>);
+</code></pre>
+<blockquote>
+<p>&#x904D;&#x5386;&#x6570;&#x7EC4;&#xFF0C;&#x6709;&#x4E00;&#x4E2A;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x5C31;&#x76F4;&#x63A5;&#x505C;&#x6B62;&#x6267;&#x884C;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5E03;&#x5C14;&#x503C;<strong>true</strong>&#x6216;&#x8005;<strong>false</strong></p>
+<pre><code class="lang-js">  <span class="hljs-keyword">let</span> bool = every(item =&gt; item == <span class="hljs-number">1</span>);
+</code></pre>
+<p>&#x904D;&#x5386;&#x6570;&#x7EC4;&#xFF0C;&#x6240;&#x6709;&#x90FD;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x624D;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5E03;&#x5C14;&#x503C;</p>
+</blockquote>
+<pre><code class="lang-js">  <span class="hljs-keyword">let</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
+  arr.splice(index, num, add)
+  <span class="hljs-built_in">console</span>.log(arr.splice(<span class="hljs-number">0</span>, <span class="hljs-number">3</span>)) <span class="hljs-comment">//[1, 2, 3]</span>
+</code></pre>
+<ul>
+<li>index: &#x5220;&#x9664;&#x4ECE;&#x4F4D;&#x7F6E;</li>
+<li>num: &#x5220;&#x9664;&#x7684;&#x6570;&#x91CF;</li>
+<li>add: &#x9700;&#x8981;&#x6DFB;&#x52A0;&#x7684;&#x5143;&#x7D20;<blockquote>
+<p>&#x539F;&#x6570;&#x7EC4;&#x6982;&#x5FF5;&#x4E86; <strong>&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4F60;&#x6240;&#x5220;&#x9664;&#x7684;&#x5143;&#x7D20;&#x7EC4;&#x6210;&#x7684;&#x6570;&#x7EC4;</strong></p>
+</blockquote>
+</li>
+</ul>
 
                                 
                                 </section>
@@ -642,8 +663,12 @@
 
             
                 
+                <a href="attr.html" class="navigation navigation-prev " aria-label="Previous page: 获取原生css属性">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="redux_state.html" class="navigation navigation-next navigation-unique" aria-label="Next page: react中state的使用">
+                
+                <a href="requestAnimationFrame.html" class="navigation navigation-next " aria-label="Next page: requestAnimationFrame">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -654,7 +679,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"redux介绍与环境准备","level":"1.9.1","depth":2,"next":{"title":"react中state的使用","level":"1.9.2","depth":2,"path":"redux/redux_state.md","ref":"./redux/redux_state.md","articles":[]},"previous":{"title":"redux","level":"1.9","depth":1,"ref":"","articles":[{"title":"redux介绍与环境准备","level":"1.9.1","depth":2,"path":"redux/redux_start.md","ref":"./redux/redux_start.md","articles":[]},{"title":"react中state的使用","level":"1.9.2","depth":2,"path":"redux/redux_state.md","ref":"./redux/redux_state.md","articles":[]},{"title":"store数据传递和修改","level":"1.9.3","depth":2,"path":"redux/redux_store.md","ref":"./redux/redux_store.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"redux/redux_start.md","mtime":"2017-11-26T15:35:18.825Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-01T16:07:03.074Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"数组的方法","level":"1.4.4","depth":2,"next":{"title":"requestAnimationFrame","level":"1.4.5","depth":2,"path":"JS/requestAnimationFrame.md","ref":"./JS/requestAnimationFrame.md","articles":[]},"previous":{"title":"获取原生css属性","level":"1.4.3","depth":2,"path":"JS/attr.md","ref":"./JS/attr.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"JS/array.md","mtime":"2017-11-28T16:47:03.603Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-01T16:07:03.074Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
