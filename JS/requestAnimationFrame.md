@@ -1,6 +1,7 @@
 ### requestAnimationFrame的一些知识
 
 - 用法介绍
+
 ```js
   var myDiv = parseInt(document.querySelector('div').style.width);
 
