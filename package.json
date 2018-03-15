@@ -7,7 +7,7 @@
     "start": "gitbook serve ./content ./gh-pages",
     "build": "gitbook build ./content ./gh-pages",
     "deploy": "node ./scripts/deploy-gh-pages.js",
-    "publish": "npm run start&&npm run deploy"
+    "publish": "npm run build&&npm run deploy"
   },
   "repository": {
     "type": "git",
