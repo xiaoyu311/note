@@ -29,6 +29,9 @@
 * 项目积累
   - VUE项目积累
     - [结构目录](./project/vue/1.md)
+* 阿里云Linux服务器部署node项目
+  - [node安装](./server/node.md)
+  - [mongodb安装](./server/mongodb.md)
 * 小雨的面试（仅供参考）
   - [js原生基础](./interview/js.md)
   - [React有关问题](./interview/react.md)
