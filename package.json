@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xiaoyu311/xiaoyu-note.git"
+    "url": "git+https://github.com/xiaoyu311/note.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/xiaoyu311/xiaoyu-note/issues"
+    "url": "https://github.com/xiaoyu311/note/issues"
   },
-  "homepage": "https://github.com/xiaoyu311/xiaoyu-note#readme",
+  "homepage": "https://github.com/xiaoyu311/note#readme",
   "dependencies": {
     "gh-pages": "^1.0.0"
   }
