@@ -7,13 +7,15 @@
     "start": "gitbook serve ./content ./gh-pages",
     "build": "gitbook build ./content ./gh-pages",
     "deploy": "node ./scripts/deploy-gh-pages.js",
-    "publish": "npm run build&&npm run deploy"
+    "publish": "npm run build && npm run deploy"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/xiaoyu311/note.git"
   },
-  "keywords": [],
+  "keywords": [
+    "xiaoyu"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
