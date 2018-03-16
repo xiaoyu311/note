@@ -51,3 +51,18 @@
   ```
   >显示如下图片证明数据库已经开启
   ![jincheng](images/jincheng.png)
+
+
+
+### 我还是感觉比较麻烦，要是一开机能自己启动那该多好啊！！！
+
+1. 进入/etc,编辑rc.local文件
+  ```
+    vi rc.local
+  ```
+2. 加入下面这行代码
+  ```
+    /usr/local/mongodb/server/bin/mongod  --dbpath=/usr/local/mongodb/data --logpath=/usr/local/mongodb/log/mongo.log --logappend  --port=27017 --fork --auth
+  ```
+3. 然后在终端中执行一次设置的命令,查看端口再一次出行
+![jincheng](images/jincheng.png) 大功告成了。
