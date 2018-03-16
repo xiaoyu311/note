@@ -32,6 +32,7 @@
 * 阿里云Linux服务器部署node项目
   - [node安装](./server/node.md)
   - [mongodb安装](./server/mongodb.md)
+  - [linux下操作mongodb数据库](./server/mongodbOper.md)
 * 小雨的面试（仅供参考）
   - [js原生基础](./interview/js.md)
   - [React有关问题](./interview/react.md)
