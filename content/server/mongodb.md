@@ -66,3 +66,8 @@
   ```
 3. 然后在终端中执行一次设置的命令,查看端口再一次,使配置文件生效
 ![jincheng](images/jincheng.png) 大功告成了。
+
+4. 关闭数据库
+  ```
+    ./mongod --dbpath /usr/local/mongodb/data --shutdown
+  ```
