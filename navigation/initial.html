@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>location介绍 · GitBook</title>
+        <title>navigation初始化路由 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,7 +57,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="screen.html" />
+    <link rel="next" href="link.html" />
     
     
 
@@ -191,9 +191,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.4.1" data-path="location.html">
+        <li class="chapter " data-level="1.4.1" data-path="../JS/location.html">
             
-                <a href="location.html">
+                <a href="../JS/location.html">
             
                     
                     location介绍
@@ -204,9 +204,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="screen.html">
+        <li class="chapter " data-level="1.4.2" data-path="../JS/screen.html">
             
-                <a href="screen.html">
+                <a href="../JS/screen.html">
             
                     
                     screen对象
@@ -217,9 +217,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.3" data-path="attr.html">
+        <li class="chapter " data-level="1.4.3" data-path="../JS/attr.html">
             
-                <a href="attr.html">
+                <a href="../JS/attr.html">
             
                     
                     获取原生css属性
@@ -230,9 +230,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.4" data-path="array.html">
+        <li class="chapter " data-level="1.4.4" data-path="../JS/array.html">
             
-                <a href="array.html">
+                <a href="../JS/array.html">
             
                     
                     数组的方法
@@ -243,9 +243,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.5" data-path="requestAnimationFrame.html">
+        <li class="chapter " data-level="1.4.5" data-path="../JS/requestAnimationFrame.html">
             
-                <a href="requestAnimationFrame.html">
+                <a href="../JS/requestAnimationFrame.html">
             
                     
                     requestAnimationFrame
@@ -256,9 +256,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.6" data-path="event.html">
+        <li class="chapter " data-level="1.4.6" data-path="../JS/event.html">
             
-                <a href="event.html">
+                <a href="../JS/event.html">
             
                     
                     EVENT相关介绍
@@ -481,9 +481,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.10.1" data-path="../navigation/initial.html">
+        <li class="chapter active" data-level="1.10.1" data-path="initial.html">
             
-                <a href="../navigation/initial.html">
+                <a href="initial.html">
             
                     
                     navigation初始化路由
@@ -494,9 +494,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.2" data-path="../navigation/link.html">
+        <li class="chapter " data-level="1.10.2" data-path="link.html">
             
-                <a href="../navigation/link.html">
+                <a href="link.html">
             
                     
                     navigation实现路由跳转
@@ -696,7 +696,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >location介绍</a>
+        <a href=".." >navigation初始化路由</a>
     </h1>
 </div>
 
@@ -711,13 +711,38 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="windowlocation&#x5BF9;&#x8C61;&#x7684;&#x4ECB;&#x7ECD;">window.location&#x5BF9;&#x8C61;&#x7684;&#x4ECB;&#x7ECD;</h3>
+                                <h3 id="navigation&#x521D;&#x59CB;&#x5316;react-native&#x9879;&#x76EE;&#x8DEF;&#x7531;&#x9875;&#x9762;">navigation&#x521D;&#x59CB;&#x5316;react-native&#x9879;&#x76EE;&#x8DEF;&#x7531;&#x9875;&#x9762;</h3>
 <ul>
-<li>reload&#x65B9;&#x6CD5;<pre><code class="lang-js"><span class="hljs-built_in">window</span>.location.reload();
+<li><p>router&#x8DEF;&#x7531;&#x6587;&#x4EF6;&#x4E0B;&#x521B;&#x5EFA;&#x8DEF;&#x7531;&#x9875;&#x9762;&#x6587;&#x4EF6;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { StackNavigator } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-navigation&apos;</span>;
+<span class="hljs-keyword">import</span> OneScreen <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./One&apos;</span>;
+<span class="hljs-keyword">import</span> TwoScreen <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./Two&apos;</span>;
+<span class="hljs-keyword">const</span> AppNavigator = ({
+  One: {
+    screen: OneScreen
+  },
+  Two: {
+    screen: TwoScreen
+  }
+}, {
+  initialRouteName: <span class="hljs-string">&apos;One&apos;</span>,
+});
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> AppNavigator;
 </code></pre>
 <blockquote>
-<p>&#x5237;&#x65B0;&#x9875;&#x9762;&#x7684;&#x65B9;&#x6CD5;</p>
+<p>StackNavigator&#x662F;&#x4E00;&#x4E2A;&#x8FD4;&#x56DE;React&#x7EC4;&#x4EF6;&#x7684;&#x51FD;&#x6570;, &#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4ECE;&#x5B83;&#x5BFC;&#x51FA;App.js&#x4EE5;&#x7528;&#x4F5C;&#x6211;&#x4EEC;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x6839;&#x7EC4;&#x4EF6;&#x3002; initialRouteName&#x521D;&#x59CB;&#x5316;&#x8DEF;&#x7531;</p>
 </blockquote>
+</li>
+<li><p>App&#x6587;&#x4EF6;&#x4E2D;&#x5982;&#x4E0B;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
+<span class="hljs-keyword">import</span> AppNavigator <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./router&apos;</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">AppNavigator</span> /&gt;</span>
+  }
+}
+</span></code></pre>
 </li>
 </ul>
 
@@ -748,7 +773,7 @@
             
                 
                 
-                <a href="screen.html" class="navigation navigation-next navigation-unique" aria-label="Next page: screen对象">
+                <a href="link.html" class="navigation navigation-next navigation-unique" aria-label="Next page: navigation实现路由跳转">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -759,7 +784,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"location介绍","level":"1.4.1","depth":2,"next":{"title":"screen对象","level":"1.4.2","depth":2,"path":"JS/screen.md","ref":"./JS/screen.md","articles":[]},"previous":{"title":"JS","level":"1.4","depth":1,"ref":"","articles":[{"title":"location介绍","level":"1.4.1","depth":2,"path":"JS/location.md","ref":"./JS/location.md","articles":[]},{"title":"screen对象","level":"1.4.2","depth":2,"path":"JS/screen.md","ref":"./JS/screen.md","articles":[]},{"title":"获取原生css属性","level":"1.4.3","depth":2,"path":"JS/attr.md","ref":"./JS/attr.md","articles":[]},{"title":"数组的方法","level":"1.4.4","depth":2,"path":"JS/array.md","ref":"./JS/array.md","articles":[]},{"title":"requestAnimationFrame","level":"1.4.5","depth":2,"path":"JS/requestAnimationFrame.md","ref":"./JS/requestAnimationFrame.md","articles":[]},{"title":"EVENT相关介绍","level":"1.4.6","depth":2,"path":"JS/event.md","ref":"./JS/event.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"JS/location.md","mtime":"2017-11-27T16:40:32.176Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-03-20T14:42:21.112Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"navigation初始化路由","level":"1.10.1","depth":2,"next":{"title":"navigation实现路由跳转","level":"1.10.2","depth":2,"path":"navigation/link.md","ref":"./navigation/link.md","articles":[]},"previous":{"title":"React-Navigation","level":"1.10","depth":1,"ref":"","articles":[{"title":"navigation初始化路由","level":"1.10.1","depth":2,"path":"navigation/initial.md","ref":"./navigation/initial.md","articles":[]},{"title":"navigation实现路由跳转","level":"1.10.2","depth":2,"path":"navigation/link.md","ref":"./navigation/link.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"navigation/initial.md","mtime":"2018-03-20T14:28:36.128Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-03-20T14:42:21.112Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
