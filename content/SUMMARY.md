@@ -26,6 +26,9 @@
   - [redux介绍与环境准备](./redux/redux_start.md)
   - [react中state的使用](./redux/redux_state.md)
   - [store数据传递和修改](./redux/redux_store.md)
+* React-Navigation
+  - [navigation初始化路由](./navigation/initial.md)
+  - [navigation实现路由跳转](./navigation/link.md)
 * 项目积累
   - VUE项目积累
     - [结构目录](./project/vue/1.md)
