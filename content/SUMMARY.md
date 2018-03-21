@@ -32,6 +32,8 @@
 * 项目积累
   - VUE项目积累
     - [结构目录](./project/vue/1.md)
+  - 移动端IOS和Android兼容问题
+    - [兼容问题](./Android/date.md)
 * 阿里云Linux服务器部署node项目
   - [node安装](./server/node.md)
   - [mongodb安装](./server/mongodb.md)
