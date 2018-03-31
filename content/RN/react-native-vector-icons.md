@@ -53,12 +53,12 @@
   2. 下载解压后得到一歌json文件，并打开, code就是我们需要的字码
   ![icon](images/code.png)
 
-  1. 在node_modules/react-native-vector-icons目录下创建Iconfont.js，内容就拷贝Ionicons.js，并将里面的Ionicons字段全部改成Iconfont，如下
+  3. 在node_modules/react-native-vector-icons目录下创建Iconfont.js，内容就拷贝Ionicons.js，并将里面的Ionicons字段全部改成Iconfont，如下
   ![icon](images/js.png)
 
-  2. 然后在node_modules/react-native-vector-icons/glyphmaps中创建Iconfont.json，内容格式如下
+  4. 然后在node_modules/react-native-vector-icons/glyphmaps中创建Iconfont.json，内容格式如下
   ![icon](images/json.png)
-  3. 这样直接引用就可以了
+  5. 这样直接引用就可以了
   ```js
     import Icon from 'react-native-vector-icons/Iconfont';
     <Icon name='Android-two' size={20} color='#fff' />
