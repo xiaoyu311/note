@@ -764,89 +764,87 @@
 <li>fetch&#x4E0D;&#x4F1A;&#x4ECE;&#x670D;&#x52A1;&#x7AEF;&#x53D1;&#x9001;&#x6216;&#x8005;&#x63A5;&#x6536;cookie</li>
 <li><p>&#x7531;&#x4E8E;&#x539F;&#x751F;&#x7684;fetch API&#x5E76;&#x4E0D;&#x652F;&#x6301;timeout&#x5C5E;&#x6027;&#xFF0C;&#x5982;&#x679C;&#x9879;&#x76EE;&#x4E2D;&#x9700;&#x8981;&#x63A7;&#x5236;fetch&#x7684;&#x8BF7;&#x6C42;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#xFF0C;&#x9700;&#x8981;&#x5BF9;fetch&#x8BF7;&#x6C42;&#x8FDB;&#x4E00;&#x6B65;&#x5C01;&#x88C5;&#x5B9E;&#x73B0;timeout&#x529F;&#x80FD;&#x3002;</p>
 <h5 id="&#x4EE3;&#x7801;&#x5728;&#x4E0B;&#x65B9;&#xFF1A;">&#x4EE3;&#x7801;&#x5728;&#x4E0B;&#x65B9;&#xFF1A;</h5>
-<p>```js
-import settings from &apos;../config&apos;;
-/**</p>
-<ul>
-<li>@param {string}    method       [&#x8BF7;&#x6C42;&#x7C7B;&#x578B;]</li>
-<li>@param {string}    url          [&#x8BF7;&#x6C42;&#x5730;&#x5740;]</li>
-<li>@param {object}    params       [&#x8BF7;&#x6C42;&#x53C2;&#x6570;]</li>
-<li>@param {boolean}   delay        [&#x5EF6;&#x65F6;&#x8BF7;&#x6C42;]
-*/</li>
-</ul>
+<pre><code class="lang-js">   <span class="hljs-keyword">import</span> settings <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../config&apos;</span>;
+<span class="hljs-comment">/**
+* @param {string}    method       [&#x8BF7;&#x6C42;&#x7C7B;&#x578B;]
+* @param {string}    url          [&#x8BF7;&#x6C42;&#x5730;&#x5740;]
+* @param {object}    params       [&#x8BF7;&#x6C42;&#x53C2;&#x6570;]
+* @param {boolean}   delay        [&#x5EF6;&#x65F6;&#x8BF7;&#x6C42;]
+*/</span>
+
+<span class="hljs-keyword">const</span> xFetch = <span class="hljs-keyword">async</span> (method = <span class="hljs-string">&apos;GET&apos;</span>, url = <span class="hljs-string">&apos;&apos;</span>, params = {}, delay = <span class="hljs-literal">false</span>) =&gt; {
+ method = method.toUpperCase();
+ <span class="hljs-keyword">let</span> Url;
+ <span class="hljs-keyword">let</span> requestConfig = {
+   method,
+   headers: {
+     <span class="hljs-string">&apos;Accept&apos;</span>: <span class="hljs-string">&apos;application/json&apos;</span>,
+     <span class="hljs-string">&apos;Content-Type&apos;</span>: <span class="hljs-string">&apos;application/json&apos;</span>
+   },
+   mode: <span class="hljs-string">&quot;cors&quot;</span>,
+ };
+ <span class="hljs-keyword">let</span> token = <span class="hljs-literal">false</span>;
+ <span class="hljs-keyword">if</span> (method === <span class="hljs-string">&apos;GET&apos;</span>) {
+   <span class="hljs-keyword">let</span> startParams = <span class="hljs-string">&apos;&apos;</span>;
+   <span class="hljs-built_in">Object</span>.keys(params).forEach(item =&gt; {
+     startParams = startParams + item + <span class="hljs-string">&apos;=&apos;</span> + params[item] + <span class="hljs-string">&apos;&amp;&apos;</span>;
+   });
+   <span class="hljs-keyword">if</span> (startParams) {
+     Url = settings.BaseUrl + url + <span class="hljs-string">&apos;?&apos;</span> + startParams.substring(<span class="hljs-number">0</span>, startParams.lastIndexOf(<span class="hljs-string">&apos;&amp;&apos;</span>));
+   } <span class="hljs-keyword">else</span> {
+     Url = settings.BaseUrl + url;
+   }
+ }
+ <span class="hljs-keyword">if</span> (method === <span class="hljs-string">&apos;POST&apos;</span>) {
+   <span class="hljs-built_in">Object</span>.defineProperty(requestConfig, <span class="hljs-string">&apos;body&apos;</span>, {
+     value: <span class="hljs-built_in">JSON</span>.stringify(params)
+   })
+ }
+ <span class="hljs-keyword">const</span> PromiseObj = fetch(Url, requestConfig);
+ <span class="hljs-keyword">if</span> (delay) {
+   <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> timeoutFetch(settings.TIME_OUT, PromiseObj);
+ }
+ <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> timeoutPromise(settings.TIME_OUT, PromiseObj);
+ <span class="hljs-keyword">if</span> (res.status === <span class="hljs-number">200</span>) {
+   <span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> res.json();
+   <span class="hljs-keyword">return</span> response;
+ } <span class="hljs-keyword">else</span> {
+   <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">`<span class="hljs-subst">${res.code}</span> <span class="hljs-subst">${response.message}</span>`</span>);
+ }
+}
+
+<span class="hljs-keyword">const</span> checkIfErrorOccurs = res =&gt; {
+ <span class="hljs-keyword">return</span> {
+   code: res.status,
+   res
+ }
+}
+<span class="hljs-comment">/**
+* &#x5EF6;&#x65F6;&#x5F02;&#x6B65;&#x8BF7;&#x6C42;async
+* @Author   xiaoyu
+* @DateTime 2018-01-19
+* @param    {number}   ms      [&#x5EF6;&#x65F6;&#x65F6;&#x95F4;]
+* @param    {Object}   promise [Promise]
+*/</span>
+<span class="hljs-keyword">const</span> timeoutPromise = (ms, promise) =&gt; {
+ <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve, reject) =&gt; {
+   <span class="hljs-keyword">const</span> time = setTimeout(() =&gt; {
+     reject(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&apos;request time out&apos;</span>))
+   }, ms)
+   promise.then((res) =&gt; {
+     clearTimeout(time);
+     resolve(res);
+   })
+   promise.catch((error) =&gt; {
+     clearTimeout(time);
+     resolve(checkIfErrorOccurs(res));
+   })
+ })
+}
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> xFetch;
+</code></pre>
 </li>
 </ol>
-<p>const xFetch = async (method = &apos;GET&apos;, url = &apos;&apos;, params = {}, delay = false) =&gt; {
-    method = method.toUpperCase();
-    let Url;
-    let requestConfig = {
-        method,
-        headers: {
-            &apos;Accept&apos;: &apos;application/json&apos;,
-            &apos;Content-Type&apos;: &apos;application/json&apos;
-        },
-        mode: &quot;cors&quot;,
-    };
-    let token = false;
-    if (method === &apos;GET&apos;) {
-        let startParams = &apos;&apos;;
-        Object.keys(params).forEach(item =&gt; {
-            startParams = startParams + item + &apos;=&apos; + params[item] + &apos;&amp;&apos;;
-        });
-        if (startParams) {
-            Url = settings.BaseUrl + url + &apos;?&apos; + startParams.substring(0, startParams.lastIndexOf(&apos;&amp;&apos;));
-        } else {
-            Url = settings.BaseUrl + url;
-        }
-    }
-    if (method === &apos;POST&apos;) {
-        Object.defineProperty(requestConfig, &apos;body&apos;, {
-            value: JSON.stringify(params)
-        })
-    }
-    const PromiseObj = fetch(Url, requestConfig);
-    if (delay) {
-        return await timeoutFetch(settings.TIME_OUT, PromiseObj);
-    }
-    const res = await timeoutPromise(settings.TIME_OUT, PromiseObj);
-    if (res.status === 200) {
-        const response = await res.json();
-        return response;
-    } else {
-        throw new Error(<code>${res.code} ${response.message}</code>);
-    }
-}</p>
-<p>const checkIfErrorOccurs = res =&gt; {
-    return {
-        code: res.status,
-        res
-    }
-}
-/**</p>
-<ul>
-<li>&#x5EF6;&#x65F6;&#x5F02;&#x6B65;&#x8BF7;&#x6C42;async</li>
-<li>@Author   xiaoyu</li>
-<li>@DateTime 2018-01-19</li>
-<li>@param    {number}   ms      [&#x5EF6;&#x65F6;&#x65F6;&#x95F4;]</li>
-<li>@param    {Object}   promise [Promise]
-*/
-const timeoutPromise = (ms, promise) =&gt; {
-  return new Promise((resolve, reject) =&gt; {<pre><code>  const time = setTimeout(() =&gt; {
-      reject(new Error(&apos;request time out&apos;))
-  }, ms)
-  promise.then((res) =&gt; {
-      clearTimeout(time);
-      resolve(res);
-  })
-  promise.catch((error) =&gt; {
-      clearTimeout(time);
-      resolve(checkIfErrorOccurs(res));
-  })
-</code></pre>  })
-}</li>
-</ul>
-<p>export default xFetch;
-```</p>
 <blockquote>
 <p>&#x52A0;&#x5165;&#x8D85;&#x65F6;&#x5904;&#x7406;&#x7684;fetchRequest&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x8DDF;&#x6CA1;&#x52A0;&#x5165;&#x8D85;&#x65F6;&#x5904;&#x7406;&#x4E00;&#x6837;&#x3002; &#x5BF9;&#x4E8E;fetch&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x7684;&#x8D85;&#x65F6;&#x5904;&#x7406;&#x7684;&#x5C01;&#x88C5;&#x53C2;&#x8003;&#x4E0B;&#x9762;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x800C;&#x5199;&#xFF1A;</p>
 </blockquote>
@@ -890,7 +888,7 @@ const timeoutPromise = (ms, promise) =&gt; {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"fetch延时","level":"1.8.3","depth":2,"next":{"title":"redux","level":"1.9","depth":1,"ref":"","articles":[{"title":"redux介绍与环境准备","level":"1.9.1","depth":2,"path":"redux/redux_start.md","ref":"./redux/redux_start.md","articles":[]},{"title":"react中state的使用","level":"1.9.2","depth":2,"path":"redux/redux_state.md","ref":"./redux/redux_state.md","articles":[]},{"title":"store数据传递和修改","level":"1.9.3","depth":2,"path":"redux/redux_store.md","ref":"./redux/redux_store.md","articles":[]}]},"previous":{"title":"函数]","level":"1.8.2","depth":2,"path":"es6/es_fun.md","ref":"./es6/es_fun.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"es6/Promise.md","mtime":"2018-03-31T14:17:14.331Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-03-31T14:18:44.751Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"fetch延时","level":"1.8.3","depth":2,"next":{"title":"redux","level":"1.9","depth":1,"ref":"","articles":[{"title":"redux介绍与环境准备","level":"1.9.1","depth":2,"path":"redux/redux_start.md","ref":"./redux/redux_start.md","articles":[]},{"title":"react中state的使用","level":"1.9.2","depth":2,"path":"redux/redux_state.md","ref":"./redux/redux_state.md","articles":[]},{"title":"store数据传递和修改","level":"1.9.3","depth":2,"path":"redux/redux_store.md","ref":"./redux/redux_store.md","articles":[]}]},"previous":{"title":"函数]","level":"1.8.2","depth":2,"path":"es6/es_fun.md","ref":"./es6/es_fun.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"es6/Promise.md","mtime":"2018-03-31T14:21:39.140Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-03-31T14:21:52.402Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
