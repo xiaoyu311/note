@@ -9,85 +9,84 @@
 
   ```js
     import settings from '../config';
-/**
- * @param {string}    method       [请求类型]
- * @param {string}    url          [请求地址]
- * @param {object}    params       [请求参数]
- * @param {boolean}   delay        [延时请求]
- */
+    /**
+    * @param {string}    method       [请求类型]
+    * @param {string}    url          [请求地址]
+    * @param {object}    params       [请求参数]
+    * @param {boolean}   delay        [延时请求]
+    */
 
-const xFetch = async (method = 'GET', url = '', params = {}, delay = false) => {
-	method = method.toUpperCase();
-	let Url;
-	let requestConfig = {
-		method,
-		headers: {
-			'Accept': 'application/json',
-			'Content-Type': 'application/json'
-		},
-		mode: "cors",
-	};
-	let token = false;
-	if (method === 'GET') {
-		let startParams = '';
-		Object.keys(params).forEach(item => {
-			startParams = startParams + item + '=' + params[item] + '&';
-		});
-		if (startParams) {
-			Url = settings.BaseUrl + url + '?' + startParams.substring(0, startParams.lastIndexOf('&'));
-		} else {
-			Url = settings.BaseUrl + url;
-		}
-	}
-	if (method === 'POST') {
-		Object.defineProperty(requestConfig, 'body', {
-			value: JSON.stringify(params)
-		})
-	}
-	const PromiseObj = fetch(Url, requestConfig);
-	if (delay) {
-		return await timeoutFetch(settings.TIME_OUT, PromiseObj);
-	}
-	const res = await timeoutPromise(settings.TIME_OUT, PromiseObj);
-	if (res.status === 200) {
-		const response = await res.json();
-		return response;
-	} else {
-		throw new Error(`${res.code} ${response.message}`);
-	}
-}
+    const xFetch = async (method = 'GET', url = '', params = {}, delay = false) => {
+      method = method.toUpperCase();
+      let Url;
+      let requestConfig = {
+        method,
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        mode: "cors",
+      };
+      let token = false;
+      if (method === 'GET') {
+        let startParams = '';
+        Object.keys(params).forEach(item => {
+          startParams = startParams + item + '=' + params[item] + '&';
+        });
+        if (startParams) {
+          Url = settings.BaseUrl + url + '?' + startParams.substring(0, startParams.lastIndexOf('&'));
+        } else {
+          Url = settings.BaseUrl + url;
+        }
+      }
+      if (method === 'POST') {
+        Object.defineProperty(requestConfig, 'body', {
+          value: JSON.stringify(params)
+        })
+      }
+      const PromiseObj = fetch(Url, requestConfig);
+      if (delay) {
+        return await timeoutFetch(settings.TIME_OUT, PromiseObj);
+      }
+      const res = await timeoutPromise(settings.TIME_OUT, PromiseObj);
+      if (res.status === 200) {
+        const response = await res.json();
+        return response;
+      } else {
+        throw new Error(`${res.code} ${response.message}`);
+      }
+    }
 
-const checkIfErrorOccurs = res => {
-	return {
-		code: res.status,
-		res
-	}
-}
-/**
-* 延时异步请求async
-* @Author   xiaoyu
-* @DateTime 2018-01-19
-* @param    {number}   ms      [延时时间]
-* @param    {Object}   promise [Promise]
-*/
-const timeoutPromise = (ms, promise) => {
-	return new Promise((resolve, reject) => {
-		const time = setTimeout(() => {
-			reject(new Error('request time out'))
-		}, ms)
-		promise.then((res) => {
-			clearTimeout(time);
-			resolve(res);
-		})
-		promise.catch((error) => {
-			clearTimeout(time);
-			resolve(checkIfErrorOccurs(res));
-		})
-	})
-}
-
-export default xFetch;
-```
+    const checkIfErrorOccurs = res => {
+      return {
+        code: res.status,
+        res
+      }
+    }
+    /**
+    * 延时异步请求async
+    * @Author   xiaoyu
+    * @DateTime 2018-01-19
+    * @param    {number}   ms      [延时时间]
+    * @param    {Object}   promise [Promise]
+    */
+    const timeoutPromise = (ms, promise) => {
+      return new Promise((resolve, reject) => {
+        const time = setTimeout(() => {
+          reject(new Error('request time out'))
+        }, ms)
+        promise.then((res) => {
+          clearTimeout(time);
+          resolve(res);
+        })
+        promise.catch((error) => {
+          clearTimeout(time);
+          resolve(checkIfErrorOccurs(res));
+        })
+      })
+    }
+    export default xFetch;
+  ```
 
 > 加入超时处理的fetchRequest网络请求的使用方法跟没加入超时处理一样。 对于fetch网络请求的超时处理的封装参考下面这篇文章而写：
 
