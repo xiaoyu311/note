@@ -8,7 +8,7 @@
   ##### 代码在下方：
 
   ```js
-        import settings from '../config';
+    import settings from '../config';
     /**
     * @param {string}    method       [请求类型]
     * @param {string}    url          [请求地址]

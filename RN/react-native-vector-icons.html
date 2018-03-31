@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>store数据传递和修改 · GitBook</title>
+        <title>RN－icon配置 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,8 +57,6 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    
-    <link rel="prev" href="redux_state.html" />
     
 
     </head>
@@ -436,9 +434,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.9.1" data-path="redux_start.html">
+        <li class="chapter " data-level="1.9.1" data-path="../redux/redux_start.html">
             
-                <a href="redux_start.html">
+                <a href="../redux/redux_start.html">
             
                     
                     redux介绍与环境准备
@@ -449,9 +447,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.2" data-path="redux_state.html">
+        <li class="chapter " data-level="1.9.2" data-path="../redux/redux_state.html">
             
-                <a href="redux_state.html">
+                <a href="../redux/redux_state.html">
             
                     
                     react中state的使用
@@ -462,9 +460,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.9.3" data-path="redux_store.html">
+        <li class="chapter " data-level="1.9.3" data-path="../redux/redux_store.html">
             
-                <a href="redux_store.html">
+                <a href="../redux/redux_store.html">
             
                     
                     store数据传递和修改
@@ -494,9 +492,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.10.1" data-path="../RN/react-native-vector-icons.html">
+        <li class="chapter active" data-level="1.10.1" data-path="react-native-vector-icons.html">
             
-                <a href="../RN/react-native-vector-icons.html">
+                <a href="react-native-vector-icons.html">
             
                     
                     RN－icon配置
@@ -773,7 +771,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >store数据传递和修改</a>
+        <a href=".." >RN－icon配置</a>
     </h1>
 </div>
 
@@ -788,129 +786,79 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="store-&#x6570;&#x636E;&#x6D41;&#x7BA1;&#x7406;&#x5DE5;&#x5177;">store &#x6570;&#x636E;&#x6D41;&#x7BA1;&#x7406;&#x5DE5;&#x5177;</h3>
-<blockquote>
-<p>&#x4E00;&#x5207;&#x6570;&#x636E;&#x90FD;&#x4FDD;&#x5B58;&#x5230;store&#x4E2D;&#xFF0C;&#x7EC4;&#x4EF6;&#x81EA;&#x5DF1;&#x4E0D;&#x4FDD;&#x5B58;&#x81EA;&#x5DF1;&#x7684;state&#x6570;&#x636E;&#x3002;</p>
-</blockquote>
-<p>&#x628A;&#x6240;&#x6709;&#x7684;&#x6570;&#x636E;&#x5B58;&#x653E;&#x5230;store&#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x6240;&#x6709;&#x7684;&#x7EC4;&#x4EF6;&#x90FD;&#x8BA2;&#x9605;&#x4E86;store&#x6570;&#x636E;&#xFF0C;&#x90A3;&#x4E48;&#x6570;&#x636E;&#x5C31;&#x6709;&#x4E86;&#x552F;&#x4E00;&#x53EF;&#x4FE1;&#x6E90;&#x3002;&#x8FD9;&#x6837;&#x7684;&#x597D;&#x5904;&#x662F;&#xFF1A;</p>
-<ul>
-<li>&#x5404;&#x4E2A;&#x7EC4;&#x4EF6;&#x90FD;&#x7EDF;&#x4E00;&#x8BFB;&#x53D6;&#x540C;&#x4E00;&#x6570;&#x636E;&#xFF0C;&#x7EC4;&#x4EF6;&#x95F4;&#x7684;&#x901A;&#x8BAF;&#x4E0D;&#x6210;&#x95EE;&#x9898;</li>
-<li>&#x628A;&#x6570;&#x636E;&#x5B58;&#x653E;&#x5230;&#x4E00;&#x8D77;&#xFF0C;&#x4EE3;&#x7801;&#x7B80;&#x5355;&#x660E;&#x4E86;&#x4E0D;&#x5BB9;&#x6613;&#x5199;&#x4E71;</li>
-</ul>
-<p>&#x5F52;&#x6839;&#x7ED3;&#x5E95;store&#x7684;&#x4E3B;&#x9898;&#x5C31;&#x662F;&#x628A;&#x6570;&#x636E;&#x653E;&#x5728;store.js&#x4E2D;</p>
-<pre><code>  state = {
-    comments:[
-      &apos;&#x7B2C;&#x4E00;&#x6761;&#x6D88;&#x606F;&apos;,&apos;&#x7B2C;&#x4E8C;&#x6761;&#x6D88;&#x606F;&apos;
-    ]
-  }
-</code></pre><p>&#x4F46;&#x662F;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x5305;</p>
-<pre><code>  npm i --save redux
-  npm i --save react-redux
-</code></pre><p>&#x5230;store.js&#x4E2D;&#x5148;&#x5BFC;&#x5165;</p>
-<pre><code>  import {createStore} from &apos;redux&apos;
-</code></pre><p>store.js &#x5BFC;&#x51FA;&#x6570;&#x636E;&#x662F;&#x8FD9;&#x6837;&#x5BFC;&#x51FA;&#x7684;&#xFF1A;</p>
-<pre><code>  let store = createStore(commentReducer)
+                                <h3 id="react-native-vector-icons-android&#x914D;&#x7F6E;">react-native-vector-icons Android&#x914D;&#x7F6E;</h3>
+<ol>
+<li>&#x7F16;&#x8F91;android/settings.gradle</li>
+</ol>
+<pre><code class="lang-js">  rootProject.name = <span class="hljs-string">&apos;&#x9879;&#x76EE;&#x540D;&#x5B57;&apos;</span>
+  + include <span class="hljs-string">&apos;:react-native-vector-icons&apos;</span>
+  + project(<span class="hljs-string">&apos;:react-native-vector-icons&apos;</span>).projectDir = <span class="hljs-keyword">new</span> File(rootProject.projectDir, <span class="hljs-string">&apos;../node_modules/react-native-vector-icons/android&apos;</span>)
 
-  export default store
-</code></pre><p>createStore&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;&#x4E09;&#x4E2A;&#x53C2;&#x6570;</p>
-<ul>
-<li>reducer &#x8FD9;&#x4E00;&#x9879;&#x662F;&#x5FC5;&#x987B;&#x586B;&#x5199;&#x7684;&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x7528;&#x6765;&#x4FEE;&#x6539;state&#x4E2D;&#x7684;&#x6570;&#x636E;</li>
-<li>preloadedState &#x662F;&#x6B32;&#x52A0;&#x8F7D;state&#xFF0C;&#x8FD9;&#x662F;&#x53EF;&#x9009;&#x9879;</li>
-<li>enhancer &#x589E;&#x5F3A;&#x5668;&#xFF0C;&#x4E5F;&#x662F;&#x53EF;&#x9009;&#x9879;</li>
-</ul>
-<h3 id="reducer&#x51FD;&#x6570;&#x4ECB;&#x7ECD;">reducer&#x51FD;&#x6570;&#x4ECB;&#x7ECD;</h3>
-<pre><code class="lang-js">  <span class="hljs-keyword">let</span> comments = [
-    <span class="hljs-string">&apos;&#x7B2C;&#x4E00;&#x6761;&apos;</span>,<span class="hljs-string">&apos;&#x7B2C;&#x4E8C;&#x6761;&apos;</span>
-  ]
-
-  <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">commentReducer</span>(<span class="hljs-params">state = comments, action</span>) </span>{
-    <span class="hljs-keyword">switch</span> (action.type) {
-      <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;ADD_COMMENT&apos;</span>:
-        <span class="hljs-keyword">return</span> [...state, action.comment]
-      <span class="hljs-keyword">default</span>:
-        <span class="hljs-keyword">return</span> state;
-    }
+  include <span class="hljs-string">&apos;:app&apos;</span>
+</code></pre>
+<ol>
+<li>&#x7F16;&#x8F91;android/app/build.gradle</li>
+</ol>
+<pre><code class="lang-js">  dependencies {
+    compile fileTree(dir: <span class="hljs-string">&apos;libs&apos;</span>, include: [<span class="hljs-string">&apos;*.jar&apos;</span>])
+    compile <span class="hljs-string">&quot;com.android.support:appcompat-v7:23.0.1&quot;</span>
+    compile <span class="hljs-string">&quot;com.facebook.react:react-native:+&quot;</span>  <span class="hljs-comment">// From node_modules</span>
+    + compile project(<span class="hljs-string">&apos;:react-native-vector-icons&apos;</span>)
   }
 </code></pre>
-<p>&#x8FD9;&#x5C31;&#x662F;reducer&#x7684;&#x57FA;&#x672C;&#x683C;&#x5F0F;</p>
-<h3 id="&#x4FEE;&#x6539;store&#x4E2D;&#x7684;&#x6570;&#x636E;">&#x4FEE;&#x6539;store&#x4E2D;&#x7684;&#x6570;&#x636E;</h3>
-<p>&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x4E86;&#xFF0C;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5230; store.js &#x540C;&#x65F6;&#x7EC4;&#x4EF6;&#x5185;&#x90E8;&#x8BFB;&#x53D6; store.js &#x4E2D;&#x7684;&#x6570;&#x636E;&#x6210;&#x529F;&#x3002;</p>
-<p>CommentBox&#x7EC4;&#x4EF6;&#x4E2D;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>
-<span class="hljs-keyword">import</span> store <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./store&apos;</span>
-<span class="hljs-keyword">import</span> { connect } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-redux&apos;</span>
+<ol>
+<li>&#x7F16;&#x8F91; android/app/src/main/java/MainApplication.java&#x6587;&#x4EF6;</li>
+</ol>
+<pre><code class="lang-js">  package com.myapp;
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CommentBox</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span></span>{
-  <span class="hljs-comment">//&#x6E32;&#x67D3;&#x8FD8;&#x662F;&#x9700;&#x8981;state&#x6539;&#x53D8;&#x624D;&#x884C;&#xFF0C;&#x6CA1;&#x6709;&#x76F4;&#x63A5;&#x7ED9;state&#x8D4B;&#x503C;&#xFF0C;&#x4E0D;&#x8FDD;&#x80CC;redux&#x601D;&#x60F3;</span>
-  handleSubmit = (e) =&gt;{
-    e.preventDefault();
-    <span class="hljs-keyword">let</span> comment = <span class="hljs-keyword">this</span>.input.value
-    store.dispatch({type:<span class="hljs-string">&apos;ADD_COMMENT&apos;</span>, comment:comment});
-    <span class="hljs-comment">//store.dispatch()&#x4FEE;&#x6539;&#x6570;&#x636E;  &#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x5C31;&#x662F;action</span>
-    <span class="hljs-keyword">this</span>.form.reset();
-  }
-  render(){
-    <span class="hljs-comment">//let comments = store.getState()//&#x83B7;&#x53D6;&#x6570;&#x636E;</span>
-    <span class="hljs-built_in">console</span>.log(store.getState());
-    <span class="hljs-keyword">return</span>(
-      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;bottom&quot;</span>&gt;</span>
-        {
-          this.props.comments.map(item =&gt;
-            <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">key</span>=<span class="hljs-string">{Math.random()}</span>&gt;</span>{item}<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-          )
-        }
-        <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">{value</span> =&gt;</span> this.form = value} onSubmit={this.handleSubmit}&gt;
-          <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;input&quot;</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">{value</span> =&gt;</span> this.input = value } type=&quot;text&quot; /&gt;
-          <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;btn&quot;</span>&gt;</span>&#x63D0;&#x4EA4;<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    )
-  }
-}
+  + <span class="hljs-keyword">import</span> com.oblador.vectoricons.VectorIconsPackage;
 
-const mapStateToProps = (state) =&gt; ({
-  comments:state
-})
-//connect &#x5B8C;&#x6BD5;&#x4E4B;&#x540E;&#xFF0C;CommentBox &#x4E4B;&#x4E2D;&#x5C31;&#x591A;&#x4E86;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#xFF1A;this.props.comments, &#x8FD9;&#x91CC;&#x5C31;&#x76F8;&#x5F53;&#x4E8E;&#x4FEE;&#x6539;state&#x6570;&#x636E;&#xFF0C;&#x7528;this.props.comments&#x5C31;&#x53EF;&#x4EE5;&#x62FF;&#x5230;&#x6570;&#x636E;&#x4E86;&#x3002;&#x9875;&#x9762;&#x6E32;&#x67D3;&#x662F;&#x7531;state&#x548C;props&#x4E4B;&#x4E00;&#x6539;&#x53D8;&#x5F15;&#x8D77;&#x7684;&#x3002;
+  ....
 
-export default connect(mapStateToProps)(CommentBox)
-</span></code></pre>
-<ul>
-<li>connect &#x8FDE;&#x63A5; store &#x548C;&#x7EC4;&#x4EF6;</li>
-<li>mapStateToProps&#xFF1A;&#x628A; store &#x4E2D;&#x7684;&#x6570;&#x636E;&#xFF08;&#x4E00;&#x90E8;&#x5206;&#xFF09;&#x6620;&#x5C04;&#x4E3A;&#x5F53;&#x524D;&#x7EC4;&#x4EF6;&#x7684; props<ul>
-<li>map &#x7684;&#x610F;&#x601D;&#x662F;&#x201C;&#x6620;&#x5C04;&#x201D;</li>
-<li>State &#x6307;&#x7684;&#x662F; store &#x72B6;&#x6001;&#x6811;&#xFF08; State Tree &#xFF09;&#xFF0C;&#x4E5F;&#x5C31;&#x662F; store &#x7684;&#x5B9E;&#x9645;&#x6570;&#x636E;</li>
-<li>Porps &#x5C31;&#x662F;&#x5C5E;&#x6027;</li>
-</ul>
-</li>
-</ul>
-<p>Store &#x4E2D;&#x6570;&#x636E;&#x5F88;&#x591A;&#xFF0C;&#x5F53;&#x524D;&#x7EC4;&#x4EF6;&#x9700;&#x8981;&#x7684;&#x53EA;&#x662F;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x90A3;&#x4E48;&#x9009;&#x53D6;&#x5DE5;&#x4F5C;&#x662F;&#x5728; mapStateToProps &#x4E2D;&#x5B8C;&#x6210;&#x7684;</p>
-<p>&#x5BFC;&#x51FA;&#x65F6;&#x5019;&#x7528;connect&#x65B9;&#x6CD5;&#x3002;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;connect(mapStateToProps)&#x6267;&#x884C;&#x5B8C;&#x8FD4;&#x56DE;&#x503C;&#x8FD8;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x5B8C;&#x4E8B;&#x540E;&#x8FD4;&#x56DE;&#x51FD;&#x6570;&#x6267;&#x884C;</p>
-<p>store.dispatch&#x662F;&#x4FEE;&#x6539;&#x6570;&#x636E;&#x7ED9;action&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#xFF08;&#x53EF;&#x4EE5;&#x67E5;&#x627E;&#x6B64;&#x7C7B;&#x578B;&#x6570;&#x636E;&#xFF09;</p>
-<p>&#x6211;&#x4EEC;&#x7684;App&#x7EC4;&#x5EFA;&#x4E2D;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
-<span class="hljs-keyword">import</span> Postbody <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./Postbody&apos;</span>
-<span class="hljs-keyword">import</span> CommentBox <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./CommentBox&apos;</span>
-<span class="hljs-keyword">import</span> store <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./store&apos;</span>
-<span class="hljs-keyword">import</span> { Provider } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-redux&apos;</span>
-<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;./App.css&apos;</span>;
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
-  render() {
-    <span class="hljs-keyword">return</span> (
-        &lt;Provider store={store}&gt;
-          &lt;div&gt;
-            &lt;Postbody /&gt;
-            &lt;CommentBox /&gt;
-          &lt;/div&gt;
-        &lt;/Provider&gt;
+  @Override
+  protected List&lt;ReactPackage&gt; getPackages() {
+    <span class="hljs-keyword">return</span> Arrays.&lt;ReactPackage&gt;asList(
+      <span class="hljs-keyword">new</span> MainReactPackage()
+  +   , <span class="hljs-keyword">new</span> VectorIconsPackage()
     );
   }
 }
-
-export default App;
 </code></pre>
-<p>&#x6240;&#x6709;&#x7684;&#x7EC4;&#x4EF6;&#x5FC5;&#x987B;&#x5305;&#x88F9;&#x5728;<code> Provider &#x8FD9;&#x4E2A;&#x7EC4;&#x4EF6;&#x4E2D; </code>&#x4E2D;&#xFF0C;&#x4F46;&#x662F;&#x6240;&#x6709;&#x7684;&#x5B50;&#x7EC4;&#x4EF6;&#x5FC5;&#x987B;&#x5305;&#x88F9;&#x5728;&#x4E00;&#x4E2A;<code> div </code> &#x4E2D;&#x3002;&#x8FD9;&#x6837;&#x5C31;&#x80FD;&#x987A;&#x5229;&#x5B8C;&#x6210;&#x6570;&#x636E;&#x5171;&#x7528;&#x4E86;&#x3002;&#x52A8;&#x6001;&#x8FDE;&#x63A5;&#x4E5F;&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x3002;</p>
+<blockquote>
+<p>&#x5343;&#x4E07;&#x4E0D;&#x8981;&#x5FD8;&#x8BB0;&#x52A0;&#x9017;&#x53F7;&#xFF0C;&#x8981;&#x4E0D;&#x7136;&#x4F1A;&#x5F88;&#x5C34;&#x5C2C;&#x7684;&#x3002;</p>
+</blockquote>
+<ol>
+<li>&#x5220;&#x9664; node<em>modules/react-native/local-cli/core/ </em> fixtures _/files/package.json &#x6587;&#x4EF6;</li>
+<li>Android&#x4E0B;&#x4E0D;&#x8981;&#x5FD8;&#x8BB0;&#x5728;\android\app\src\main\assets\fonts &#x6DFB;&#x52A0;&#x4F60;&#x7684;&#x56FE;&#x6807;&#x6587;&#x4EF6; 
+<img src="images/icon.png" alt="icon"><blockquote>
+<p>&#x57FA;&#x672C;&#x5927;&#x529F;&#x544A;&#x6210;&#x4E86;</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="&#x81EA;&#x5B9A;&#x4E49;&#x56FE;&#x6807;">&#x81EA;&#x5B9A;&#x4E49;&#x56FE;&#x6807;</h3>
+<ol>
+<li>&#x6211;&#x4F7F;&#x7528;&#x7684;&#x56FE;&#x6807;&#x5E93; <a href="https://icomoon.io/" target="_blank">https://icomoon.io/</a>, &#x901A;&#x8FC7; Import Icons &#x5BFC;&#x5165;&#x81EA;&#x5DF1;&#x7684;svg&#x56FE;&#x7247; 
+<img src="images/iconfont.png" alt="icon"></li>
+<li><p>&#x4E0B;&#x8F7D;&#x89E3;&#x538B;&#x540E;&#x5F97;&#x5230;&#x4E00;&#x6B4C;json&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x6253;&#x5F00;, code&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7684;&#x5B57;&#x7801;
+<img src="images/code.png" alt="icon"></p>
+</li>
+<li><p>&#x5728;node_modules/react-native-vector-icons&#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;Iconfont.js&#xFF0C;&#x5185;&#x5BB9;&#x5C31;&#x62F7;&#x8D1D;Ionicons.js&#xFF0C;&#x5E76;&#x5C06;&#x91CC;&#x9762;&#x7684;Ionicons&#x5B57;&#x6BB5;&#x5168;&#x90E8;&#x6539;&#x6210;Iconfont&#xFF0C;&#x5982;&#x4E0B;
+<img src="images/js.png" alt="icon"></p>
+</li>
+<li><p>&#x7136;&#x540E;&#x5728;node_modules/react-native-vector-icons/glyphmaps&#x4E2D;&#x521B;&#x5EFA;Iconfont.json&#xFF0C;&#x5185;&#x5BB9;&#x683C;&#x5F0F;&#x5982;&#x4E0B;
+<img src="images/json.png" alt="icon"></p>
+</li>
+<li><p>&#x8FD9;&#x6837;&#x76F4;&#x63A5;&#x5F15;&#x7528;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> Icon <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-native-vector-icons/Iconfont&apos;</span>;
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&apos;Android-two&apos;</span> <span class="hljs-attr">size</span>=<span class="hljs-string">{20}</span> <span class="hljs-attr">color</span>=<span class="hljs-string">&apos;#fff&apos;</span> /&gt;</span>
+</span></code></pre>
+<blockquote>
+<p>&#x5927;&#x529F;&#x544A;&#x6210;</p>
+</blockquote>
+<p>&#x4F7F;&#x7528;react-native-vector-icons&#x5927;&#x591A;&#x90FD;&#x9700;&#x8981;&#x81EA;&#x5B9A;&#x4E49;&#xFF0C;&#x5C06;&#x9879;&#x76EE;&#x56FE;&#x7247;&#x8F6C;&#x4E3A;ttf&#x5B57;&#x4F53;&#x56FE;&#x6807;&#x8FDB;&#x884C;&#x4F7F;&#x7528;&#x3002;&#x6846;&#x67B6;&#x7684;&#x4F7F;&#x7528;&#x53CA;&#x81EA;&#x5B9A;&#x4E49;&#x8BE6;&#x7EC6;&#x89C1;&#xFF1A;<a href="https://github.com/oblador/react-native-vector-icons" target="_blank">https://github.com/oblador/react-native-vector-icons</a></p>
+<p>&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;<a href="https://blog.csdn.net/u010940770/article/details/71429599" target="_blank">https://blog.csdn.net/u010940770/article/details/71429599</a></p>
+</li>
+</ol>
 
                                 
                                 </section>
@@ -938,10 +886,6 @@ export default App;
 
             
                 
-                <a href="redux_state.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: react中state的使用">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
                 
             
         
@@ -950,7 +894,7 @@ export default App;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"store数据传递和修改","level":"1.9.3","depth":2,"next":{"title":"react-native","level":"1.10","depth":1,"ref":"","articles":[{"title":"RN－icon配置","level":"1.10.1","depth":2,"path":"RN/react-native-vector-icons.md","ref":"./RN/react-native-vector-icons.md","articles":[]}]},"previous":{"title":"react中state的使用","level":"1.9.2","depth":2,"path":"redux/redux_state.md","ref":"./redux/redux_state.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"redux/redux_store.md","mtime":"2017-11-26T15:35:18.826Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-03-31T14:47:34.784Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"RN－icon配置","level":"1.10.1","depth":2,"next":{"title":"React-Navigation","level":"1.11","depth":1,"ref":"","articles":[{"title":"navigation初始化路由","level":"1.11.1","depth":2,"path":"navigation/initial.md","ref":"./navigation/initial.md","articles":[]},{"title":"navigation实现路由跳转","level":"1.11.2","depth":2,"path":"navigation/link.md","ref":"./navigation/link.md","articles":[]}]},"previous":{"title":"react-native","level":"1.10","depth":1,"ref":"","articles":[{"title":"RN－icon配置","level":"1.10.1","depth":2,"path":"RN/react-native-vector-icons.md","ref":"./RN/react-native-vector-icons.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"RN/react-native-vector-icons.md","mtime":"2018-03-31T14:46:26.107Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-03-31T14:47:34.784Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
