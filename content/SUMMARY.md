@@ -21,7 +21,8 @@
   - [使用Gitbook来做笔记](./Git/gitbook.md)
 * ES6
   - [声明变量](./es6/es_var.md)
-  - [声明变量](./es6/es_fun.md)
+  - [函数]](./es6/es_fun.md)
+  - [fetch延时](./es6/Promise.md)
 * redux
   - [redux介绍与环境准备](./redux/redux_start.md)
   - [react中state的使用](./redux/redux_state.md)
