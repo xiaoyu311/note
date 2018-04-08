@@ -6,6 +6,7 @@
   - [HTML新标签](./html/newEle.md)
 * CSS
   - [项目初始化样式](./css/init.md)
+  - [CSS书写规范](./css/standard.md)
 * JS
   - [location介绍](./JS/location.md)
   - [screen对象](./JS/screen.md)
