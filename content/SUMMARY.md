@@ -30,6 +30,7 @@
   - [store数据传递和修改](./redux/redux_store.md)
 * react-native
   - [RN－icon配置](./RN/react-native-vector-icons.md)
+  - [Android原生模块](./RN/android.md)
 * React-Navigation
   - [navigation初始化路由](./navigation/initial.md)
   - [navigation实现路由跳转](./navigation/link.md)
