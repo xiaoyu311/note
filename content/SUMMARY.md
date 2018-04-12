@@ -24,6 +24,8 @@
   - [声明变量](./es6/es_var.md)
   - [函数]](./es6/es_fun.md)
   - [fetch延时](./es6/Promise.md)
+* react
+  - [react语法编译](./react/syntax.md)
 * redux
   - [redux介绍与环境准备](./redux/redux_start.md)
   - [react中state的使用](./redux/redux_state.md)
