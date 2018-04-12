@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Android原生模块 · GitBook</title>
+        <title>react语法编译 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,8 +57,6 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    
-    <link rel="prev" href="react-native-vector-icons.html" />
     
 
     </head>
@@ -449,9 +447,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.9.1" data-path="../react/syntax.html">
+        <li class="chapter active" data-level="1.9.1" data-path="syntax.html">
             
-                <a href="../react/syntax.html">
+                <a href="syntax.html">
             
                     
                     react语法编译
@@ -539,9 +537,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.11.1" data-path="react-native-vector-icons.html">
+        <li class="chapter " data-level="1.11.1" data-path="../RN/react-native-vector-icons.html">
             
-                <a href="react-native-vector-icons.html">
+                <a href="../RN/react-native-vector-icons.html">
             
                     
                     RN－icon配置
@@ -552,9 +550,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.11.2" data-path="android.html">
+        <li class="chapter " data-level="1.11.2" data-path="../RN/android.html">
             
-                <a href="android.html">
+                <a href="../RN/android.html">
             
                     
                     Android原生模块
@@ -831,7 +829,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Android原生模块</a>
+        <a href=".." >react语法编译</a>
     </h1>
 </div>
 
@@ -846,136 +844,24 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="&#x63A5;&#x5165;android&#x539F;&#x751F;&#x6A21;&#x5757;">&#x63A5;&#x5165;Android&#x539F;&#x751F;&#x6A21;&#x5757;</h3>
+                                <h3 id="react-&#x8BED;&#x6CD5;&#x7F16;&#x8BD1;&#x5230;&#x5E95;&#x662F;&#x6837;&#x7684;&#x5462;&#xFF1F;">React &#x8BED;&#x6CD5;&#x7F16;&#x8BD1;&#x5230;&#x5E95;&#x662F;&#x6837;&#x7684;&#x5462;&#xFF1F;</h3>
 <ul>
-<li><p>&#x6309;&#x7167;&#x5B98;&#x65B9;&#x7684;&#x8BF4;&#x6CD5;&#xFF0C;&#x7B2C;&#x4E00;&#x6B65;&#x9700;&#x8981;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;java&#x7C7B;&#x672C;&#x4F8B;&#x4E2D;&#x4E3A;&#xFF1A;ToastModule&#xFF0C;&#x5E76;&#x7EE7;&#x627F;ReactContextBaseJavaModule&#xFF0C;&#x7136;&#x540E;&#x590D;&#x5199;getName()&#x65B9;&#x6CD5;&#xFF0C;&#x5176;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x5C31;&#x662F;&#x5728;react-native&#x4E2D;&#x5F15;&#x7528;&#x7684;&#x7EC4;&#x4EF6;&#x540D;&#x79F0;</p>
-</li>
-<li><p>&#x590D;&#x5199; getConstants()&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x8FD4;&#x56DE;&#x4E00;&#x4E9B;&#x5E38;&#x91CF;&#x7528;&#x4E8E;react-native&#x4E2D;&#x8C03;&#x7528;&#xFF0C;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x4E2D; return &quot;ToastAndroid&quot; &#x8FD9;&#x4E2A;&#x540D;&#x79F0;&#x5728;&#x539F;&#x751F;&#x7684;&#x7EC4;&#x4EF6;&#x4E2D;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#xFF0C;&#x8FD4;&#x56DE;&#x76F8;&#x540C;&#x7684;&#x540D;&#x79F0;&#x5C06;&#x4F1A;&#x51B2;&#x7A81;&#xFF0C;so:&#x6539;&#x4E2A;&#x540D;&#x5B57;&#x5427;&#xFF01;&#xFF01;</p>
-</li>
-<li><p>@ReactMethod&#x6CE8;&#x89E3;&#xFF1A;&#x7528;&#x4E8E;java&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;react-native&#x4E2D;&#x53EF;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5; &#xFF0C;&#x5176;&#x4E0D;&#x80FD;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#x6240;&#x4EE5;&#x4F7F;&#x7528; void</p>
-</li>
-<li><p>&#x6CE8;&#x518C;&#x6A21;&#x5757;&#xFF1A;&#x521B;&#x5EFA;java&#x7C7B;&#x672C;&#x4F8B;&#x4E2D;&#x4E3A;&#xFF1A;ExampleReactPackage&#xFF0C;&#x5B9E;&#x73B0;ReactPackage&#x63A5;&#x53E3;</p>
-</li>
-<li><p>&#x590D;&#x5199;createJSModules() , createViewManagers() &#x65B9;&#x6CD5;&#xFF0C;&#x8FD4;&#x56DE;Collections.emptyList()&#x7A7A;&#x96C6;&#x5408;</p>
-</li>
-<li><p>createNativeModules()&#x65B9;&#x6CD5;&#x4E2D;&#x6DFB;&#x52A0;&#x6211;&#x4EEC;&#x9700;&#x6CE8;&#x518C;&#x7684;&#x6A21;&#x5757;&#x5BF9;&#x8C61;&#xFF0C;new ToastModule(),&#x5E76;&#x8FD4;&#x56DE;&#x6A21;&#x5757;&#x96C6;&#x5408;</p>
-</li>
-<li><p>&#x6DFB;&#x52A0;&#x5DF2;&#x6CE8;&#x518C;&#x6A21;&#x5757;&#x5BF9;&#x8C61;&#x5230;&#x8FD4;&#x56DE;&#x96C6;&#x5408;&#x4E2D;&#xFF0C;&#x5411;react-native&#x629B;&#x51FA;&#x6A21;&#x5757;&#xFF0C;&#x5982;&#xFF1A;&#x7B2C;&#x4E09;&#x6B65;</p>
-</li>
-<li><p>&#x5728;react-native&#x4E2D;&#x8C03;&#x7528;&#xFF0C;&#x5982;&#xFF1A;&#x7B2C;&#x56DB;&#x6B65;</p>
-<h4 id="android&#x76EE;&#x5F55;&#x7ED3;&#x6784;">android&#x76EE;&#x5F55;&#x7ED3;&#x6784;</h4>
-<p><img src="https://github.com/Xing-He/react-native-native-module/raw/master/images/c.png" alt="ss"></p>
-<h4 id="&#x6CE8;&#x610F;&#xFF1A;&#x5F15;&#x5165;&#x5305;&#x7684;&#x540D;&#x79F0;&#x4E0D;&#x8981;&#x5F04;&#x9519;&#x4E86;">&#x6CE8;&#x610F;&#xFF1A;&#x5F15;&#x5165;&#x5305;&#x7684;&#x540D;&#x79F0;&#x4E0D;&#x8981;&#x5F04;&#x9519;&#x4E86;</h4>
-<h4 id="1-&#x7B2C;&#x4E00;&#x6B65;-&#x521B;&#x5EFA;&#x6A21;&#x5757;&#x7C7B;">1. &#x7B2C;&#x4E00;&#x6B65; &#x521B;&#x5EFA;&#x6A21;&#x5757;&#x7C7B;</h4>
-<p>&#x5728;androidtoast&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;ToastModule.java&#x7684;&#x7C7B;</p>
-<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.androidtoast; <span class="hljs-comment">//&#x5305;&#x540D;</span>
-
-<span class="hljs-keyword">import</span> android.widget.Toast; <span class="hljs-comment">//&#x5F15;&#x5165;&#x8C03;&#x7528;&#x7684;&#x7C7B;</span>
-
-<span class="hljs-keyword">import</span> com.facebook.react.bridge.ReactApplicationContext;
-<span class="hljs-keyword">import</span> com.facebook.react.bridge.ReactContextBaseJavaModule;
-<span class="hljs-keyword">import</span> com.facebook.react.bridge.ReactMethod;
-<span class="hljs-keyword">import</span> com.facebook.react.uimanager.IllegalViewOperationException;
-
-<span class="hljs-keyword">import</span> java.util.Map;
-<span class="hljs-keyword">import</span> java.util.HashMap;
-
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ToastModule</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ReactContextBaseJavaModule</span> </span>{
-
-  <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String DURATION_SHORT_KEY = <span class="hljs-string">&quot;SHORT&quot;</span>;
-  <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String DURATION_LONG_KEY = <span class="hljs-string">&quot;LONG&quot;</span>;
-
-  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">ToastModule</span><span class="hljs-params">(ReactApplicationContext reactContext)</span> </span>{
-      <span class="hljs-keyword">super</span>(reactContext);
-  }
-
-  <span class="hljs-comment">// &#x590D;&#x5199;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD4;&#x56DE;react-native&#x4E2D;&#x8C03;&#x7528;&#x7684; &#x7EC4;&#x4EF6;&#x540D;</span>
-  <span class="hljs-meta">@Override</span>
-  <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getName</span><span class="hljs-params">()</span> </span>{
-      <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;ToastNative&quot;</span>;
-  }
-  <span class="hljs-comment">// &#x590D;&#x5199;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD4;&#x56DE;&#x5E38;&#x91CF;</span>
-  <span class="hljs-meta">@Override</span>
-  <span class="hljs-function"><span class="hljs-keyword">public</span> Map&lt;String, Object&gt; <span class="hljs-title">getConstants</span><span class="hljs-params">()</span> </span>{
-      <span class="hljs-keyword">final</span> Map&lt;String, Object&gt; constants = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();
-      constants.put(DURATION_SHORT_KEY, Toast.LENGTH_SHORT);
-      constants.put(DURATION_LONG_KEY, Toast.LENGTH_LONG);
-      <span class="hljs-keyword">return</span> constants;
-  }
-  <span class="hljs-comment">// &#x4F7F;&#x7528; @ReactMethod&#x6CE8;&#x89E3;&#x8FD4;&#x56DE;react-native&#x4E2D;&#x53EF;&#x8C03;&#x7528;&#x7684; &#x65B9;&#x6CD5;</span>
-  <span class="hljs-meta">@ReactMethod</span>
-  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">show</span><span class="hljs-params">(String message, <span class="hljs-keyword">int</span> duration)</span> </span>{
-      Toast.makeText(getReactApplicationContext(), message, duration).show();
-  }
-}
+<li><p>&#x6807;&#x7B7E;&#x7F16;&#x8BD1;
+&#x5F53;&#x6211;&#x4EEC;&#x5728;jsx&#x7F16;&#x5199;Dom&#x6807;&#x7B7E;&#x7684;&#x65F6;&#x5019;Babel&#x4F1A;&#x5E2E;&#x6211;&#x4EEC;&#x628A;&#x76F8;&#x5173;&#x7684;&#x5185;&#x5BB9;&#x7F16;&#x8BD1;&#x6210;&#x6D4F;&#x89C8;&#x5668;&#x8BA4;&#x8BC6;&#x7684;js&#x8BED;&#x6CD5;&#x3002;</p>
+<pre><code class="lang-js">&lt;div className=&quot;xiao&quot;&gt;yu&lt;/div&gt;
 </code></pre>
-<h4 id="2-&#x7B2C;&#x4E8C;&#x6B65;-&#x6CE8;&#x518C;&#x6A21;&#x5757;">2. &#x7B2C;&#x4E8C;&#x6B65; &#x6CE8;&#x518C;&#x6A21;&#x5757;</h4>
-<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.androidtoast;
-
-<span class="hljs-keyword">import</span> android.widget.Toast;
-
-<span class="hljs-keyword">import</span> com.facebook.react.bridge.NativeModule;
-<span class="hljs-keyword">import</span> com.facebook.react.bridge.ReactApplicationContext;
-<span class="hljs-keyword">import</span> com.facebook.react.bridge.ReactMethod;
-<span class="hljs-keyword">import</span> com.facebook.react.ReactPackage;
-<span class="hljs-keyword">import</span> com.facebook.react.bridge.JavaScriptModule;
-<span class="hljs-keyword">import</span> com.facebook.react.uimanager.ViewManager;
-
-<span class="hljs-keyword">import</span> java.util.ArrayList;
-<span class="hljs-keyword">import</span> java.util.Collections;
-<span class="hljs-keyword">import</span> java.util.List;
-
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ExampleReactPackage</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">ReactPackage</span> </span>{
-
-  <span class="hljs-meta">@Override</span>
-  <span class="hljs-keyword">public</span> List&lt;Class&lt;? extends JavaScriptModule&gt;&gt; createJSModules() {
-      <span class="hljs-keyword">return</span> Collections.emptyList();
-  }
-
-  <span class="hljs-meta">@Override</span>
-  <span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;ViewManager&gt; <span class="hljs-title">createViewManagers</span><span class="hljs-params">(ReactApplicationContext reactContext)</span> </span>{
-      <span class="hljs-keyword">return</span> Collections.emptyList();
-  }
-
-  <span class="hljs-meta">@Override</span>
-  <span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;NativeModule&gt; <span class="hljs-title">createNativeModules</span><span class="hljs-params">(
-          ReactApplicationContext reactContext)</span> </span>{
-      List&lt;NativeModule&gt; modules = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();
-
-      modules.add(<span class="hljs-keyword">new</span> ToastModule(reactContext));
-
-      <span class="hljs-keyword">return</span> modules;
-  }
-}
+<p>Babel&#x5C31;&#x662F;&#x5E2E;&#x6211;&#x4EEC;&#x7F16;&#x8BD1;&#x6210;&#x8FD9;&#x4E2A;&#x6837;&#x5B50;</p>
+<pre><code class="lang-js">React.createElement(<span class="hljs-string">&quot;div&quot;</span>, {className: <span class="hljs-string">&quot;xiao&quot;</span>}, <span class="hljs-string">&quot;yu&quot;</span>)
 </code></pre>
-<h4 id="3-&#x7B2C;&#x4E09;&#x6B65;-&#x6DFB;&#x52A0;&#x6CE8;&#x518C;&#x7C7B;">3. &#x7B2C;&#x4E09;&#x6B65; &#x6DFB;&#x52A0;&#x6CE8;&#x518C;&#x7C7B;</h4>
-<p>&#x6DFB;&#x52A0;&#x5230; MainApplication.java &#x4E2D;&#x7684;getPackages()&#x65B9;&#x6CD5;&#x4E2D;</p>
-<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
-<span class="hljs-function"><span class="hljs-keyword">protected</span> List&lt;ReactPackage&gt; <span class="hljs-title">getPackages</span><span class="hljs-params">()</span> </span>{
-<span class="hljs-keyword">return</span> Arrays.&lt;ReactPackage&gt;asList(
-    <span class="hljs-keyword">new</span> MainReactPackage(), <span class="hljs-comment">// &#x8FD9;&#x4E2A;&#x662F;&#x81EA;&#x52A8;&#x521B;&#x5EFA;</span>
-    <span class="hljs-keyword">new</span> ExampleReactPackage() <span class="hljs-comment">// &#x8FD9;&#x4E2A;&#x7C7B;&#x662F;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x7684;</span>
-);
-}
+<p>&#x4E5F;&#x5C31;&#x662F;React&#x8FD9;&#x4E2A;&#x7C7B;&#x8C03;&#x7528;createElement&#x65B9;&#x6CD5;&#xFF0C;&#x65B9;&#x6CD5;&#x4F20;&#x9012;2&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;&#x6807;&#x7B7E;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x5F53;&#x8FD8;&#x6709;&#x884C;&#x5185;&#x6837;&#x5F0F;&#x6216;&#x8005;&#x5176;&#x4ED6;&#x5C5E;&#x6027;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E00;&#x5E76;&#x6DFB;&#x52A0;&#x5230;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x5BF9;&#x8C61;&#x4E2D;&#x3002;&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x5C31;&#x662F;&#x6807;&#x7B7E;&#x5185;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x5047;&#x5982;&#x6CA1;&#x6709;Babel&#x4F1A;&#x81EA;&#x52A8;&#x4E0D;&#x4F20;&#x6B64;&#x53C2;&#x6570;&#x3002;</p>
+</li>
+<li><p>&#x7F16;&#x8BD1;component</p>
+<pre><code class="lang-js">&lt;Button color={color}&gt;xixi&lt;/Button&gt;
 </code></pre>
-<h5 id="&#x9879;&#x76EE;&#x7ED3;&#x6784;&#x5982;&#x4E0B;&#xFF1A;">&#x9879;&#x76EE;&#x7ED3;&#x6784;&#x5982;&#x4E0B;&#xFF1A;</h5>
-<p><img src="https://github.com/Xing-He/react-native-native-module/raw/master/images/d.png" alt="aa"></p>
-<blockquote>
-<p>Java&#x90E8;&#x5206;&#x7684;&#x4EE3;&#x7801;&#x5C31;&#x7ED3;&#x675F;&#x4E86;&#xFF0C;&#x518D;&#x6B21;&#x63D0;&#x9192;&#x4E0B;&#xFF1A;&#x5305;&#x540D;&#x554A;&#xFF01;&#xFF01;&#x4E0D;&#x8981;&#x5F04;&#x9519;&#x4E86;&#xFF01;&#xFF01;&#xFF01;</p>
-</blockquote>
-<h4 id="4-&#x7B2C;&#x56DB;&#x6B65;-&#x4FEE;&#x6539;react-native&#x4EE3;&#x7801;&#x5F15;&#x5165;&#x539F;&#x751F;&#x6A21;&#x5757;">4. &#x7B2C;&#x56DB;&#x6B65; &#x4FEE;&#x6539;react-native&#x4EE3;&#x7801;&#x5F15;&#x5165;&#x539F;&#x751F;&#x6A21;&#x5757;</h4>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> { NativeModules } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-native&apos;</span>;
-<span class="hljs-keyword">let</span> toast = NativeModules.ToastNative;
+<p>&#x7F16;&#x8BD1;&#x6210;&#xFF1A;</p>
+<pre><code class="lang-js">React.createElement(<span class="hljs-string">&quot;Button&quot;</span>, {color: color}, <span class="hljs-string">&quot;xixi&quot;</span>)
 </code></pre>
-<h5 id="&#x901A;&#x8FC7;&#x8C03;&#x7528;-toastshowtoast-messagetoastshort">&#x901A;&#x8FC7;&#x8C03;&#x7528; toast.show(&apos;Toast message&apos;,toast.SHORT);</h5>
-<h4 id="5-&#x8FD0;&#x884C;&#x7A0B;&#x5E8F;-react-native-run-android">5. &#x8FD0;&#x884C;&#x7A0B;&#x5E8F; react-native run-android</h4>
-<blockquote>
-<p>&#x6CE8;&#x610F;&#x7A0B;&#x5E8F;&#x6709;&#x53EF;&#x80FD;&#x62A5;&#x4E00;&#x4E2A;&#x9519;&#x8BEF; 
-<img src="images/and.png" alt="dd"></p>
-</blockquote>
-<p>&#x63D0;&#x793A;@override&#x9519;&#x8BEF;&#x662F;&#x56E0;&#x4E3A;react-native&#x7684;0.47.0&#x79FB;&#x9664;&#x8BE5;&#x65B9;&#x6CD5;&#xFF0C;&#x6240;&#x4EE5;&#x53BB;&#x6389;createJSModules&#x51FD;&#x6570;&#x5C31;&#x597D;&#x4E86;</p>
-<p>&#x53C2;&#x8003;&#x8FDE;&#x63A5;&#xFF1A; <a href="https://github.com/Xing-He/react-native-native-module/blob/master/README.md" target="_blank">react-native-nativeModule</a>
-<a href="https://github.com/lovebing/react-native-baidu-map/issues/145" target="_blank">&#x65B9;&#x6CD5;&#x4E0D;&#x4F1A;&#x8986;&#x76D6;&#x6216;&#x5B9E;&#x73B0;&#x8D85;&#x7C7B;&#x578B;&#x7684;&#x65B9;&#x6CD5; #145</a></p>
+<p>component &#x7F16;&#x8BD1;&#x8DDF;&#x6807;&#x7B7E;&#x7C7B;&#x4F3C;&#x3002;</p>
 </li>
 </ul>
 
@@ -1005,10 +891,6 @@
 
             
                 
-                <a href="react-native-vector-icons.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: RN－icon配置">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
                 
             
         
@@ -1017,7 +899,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Android原生模块","level":"1.11.2","depth":2,"next":{"title":"React-Navigation","level":"1.12","depth":1,"ref":"","articles":[{"title":"navigation初始化路由","level":"1.12.1","depth":2,"path":"navigation/initial.md","ref":"./navigation/initial.md","articles":[]},{"title":"navigation实现路由跳转","level":"1.12.2","depth":2,"path":"navigation/link.md","ref":"./navigation/link.md","articles":[]}]},"previous":{"title":"RN－icon配置","level":"1.11.1","depth":2,"path":"RN/react-native-vector-icons.md","ref":"./RN/react-native-vector-icons.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"RN/android.md","mtime":"2018-04-10T14:50:46.668Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-12T15:32:53.166Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"react语法编译","level":"1.9.1","depth":2,"next":{"title":"redux","level":"1.10","depth":1,"ref":"","articles":[{"title":"redux介绍与环境准备","level":"1.10.1","depth":2,"path":"redux/redux_start.md","ref":"./redux/redux_start.md","articles":[]},{"title":"react中state的使用","level":"1.10.2","depth":2,"path":"redux/redux_state.md","ref":"./redux/redux_state.md","articles":[]},{"title":"store数据传递和修改","level":"1.10.3","depth":2,"path":"redux/redux_store.md","ref":"./redux/redux_store.md","articles":[]}]},"previous":{"title":"react","level":"1.9","depth":1,"ref":"","articles":[{"title":"react语法编译","level":"1.9.1","depth":2,"path":"react/syntax.md","ref":"./react/syntax.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"react/syntax.md","mtime":"2018-04-12T12:40:18.349Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-12T15:32:53.166Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
