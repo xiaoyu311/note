@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>项目初始化样式 · GitBook</title>
+        <title>AsyncStorage 失效问题 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,8 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="standard.html" />
     
+    <link rel="prev" href="android.html" />
     
 
     </head>
@@ -159,9 +159,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.3.1" data-path="init.html">
+        <li class="chapter " data-level="1.3.1" data-path="../css/init.html">
             
-                <a href="init.html">
+                <a href="../css/init.html">
             
                     
                     项目初始化样式
@@ -172,9 +172,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="standard.html">
+        <li class="chapter " data-level="1.3.2" data-path="../css/standard.html">
             
-                <a href="standard.html">
+                <a href="../css/standard.html">
             
                     
                     CSS书写规范
@@ -539,9 +539,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.11.1" data-path="../RN/react-native-vector-icons.html">
+        <li class="chapter " data-level="1.11.1" data-path="react-native-vector-icons.html">
             
-                <a href="../RN/react-native-vector-icons.html">
+                <a href="react-native-vector-icons.html">
             
                     
                     RN－icon配置
@@ -552,9 +552,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.2" data-path="../RN/android.html">
+        <li class="chapter " data-level="1.11.2" data-path="android.html">
             
-                <a href="../RN/android.html">
+                <a href="android.html">
             
                     
                     Android原生模块
@@ -565,9 +565,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.3" data-path="../RN/AsyncStorage.html">
+        <li class="chapter active" data-level="1.11.3" data-path="AsyncStorage.html">
             
-                <a href="../RN/AsyncStorage.html">
+                <a href="AsyncStorage.html">
             
                     
                     AsyncStorage 失效问题
@@ -844,7 +844,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >项目初始化样式</a>
+        <a href=".." >AsyncStorage 失效问题</a>
     </h1>
 </div>
 
@@ -859,19 +859,61 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="&#x6837;&#x5F0F;&#x521D;&#x59CB;&#x5316;&#x6837;&#x5F0F;&#x4ECB;&#x7ECD;">&#x6837;&#x5F0F;&#x521D;&#x59CB;&#x5316;&#x6837;&#x5F0F;&#x4ECB;&#x7ECD;</h3>
+                                <h3 id="asyncstorage-&#x5728;android-&#x8C03;&#x8BD5;-onload&#x540E;-asyncstorage&#x65B9;&#x6CD5;&#x5931;&#x6548;&#x3002;">AsyncStorage &#x5728;android &#x8C03;&#x8BD5; onload&#x540E; AsyncStorage&#x65B9;&#x6CD5;&#x5931;&#x6548;&#x3002;</h3>
 <ul>
-<li><strong>-webkit-tap-highlight-color: transparent;</strong><blockquote>
-<p>&#x5F53;&#x7528;&#x6237;&#x70B9;&#x51FB;iOS&#x7684;Safari&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x7684;&#x94FE;&#x63A5;&#x6216;JavaScript&#x7684;&#x53EF;&#x70B9;&#x51FB;&#x7684;&#x5143;&#x7D20;&#x65F6;&#xFF0C;&#x8986;&#x76D6;&#x663E;&#x793A;&#x7684;&#x9AD8;&#x4EAE;&#x989C;&#x8272;&#x3002;</p>
-</blockquote>
+<li><p>RN&#x5751;&#x771F;&#x7684;&#x6709;&#x70B9;&#x591A;&#xFF0C;&#x4F5C;&#x4E3A;&#x4E00;&#x7A0B;&#x5E8F;&#x4EBA;&#x5929;&#x5929;&#x90FD;&#x662F;&#x6C34;&#x6DF1;&#x706B;&#x70ED;&#x4E2D;&#x3002;&#x8BB0;&#x5F55;&#x8FD9;&#x4E9B;&#x5751;&#xFF0C;&#x4F60;&#x4EEC;&#x9047;&#x5230;&#x7684;&#x65F6;&#x5019;&#x80FD;&#x5C3D;&#x5FEB;&#x7684;&#x51B3;&#x89E3;&#x95EE;&#x9898;&#x3002;&#x8DF3;&#x51FA;&#x6DF1;&#x5751;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { AsyncStorage } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-native&apos;</span>;
+<span class="hljs-comment">/**
+* &#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;&#x5B58;&#x50A8;
+* @param key &#x952E; 
+* @param value &#x952E;&#x503C; 
+* @param callback &#x56DE;&#x6389;&#x51FD;&#x6570; 
+*/</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> setStore = (key, value) =&gt; {
+<span class="hljs-string">&apos;static&apos;</span>;
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve, reject) =&gt; { 
+  <span class="hljs-keyword">if</span> (!key) <span class="hljs-keyword">return</span>;
+  <span class="hljs-keyword">if</span> (!value) <span class="hljs-keyword">return</span>;
+  AsyncStorage.setItem(key, <span class="hljs-built_in">JSON</span>.stringify(value), error =&gt; {
+    <span class="hljs-keyword">if</span> (!error)
+      resolve(<span class="hljs-literal">true</span>);
+    <span class="hljs-keyword">else</span>
+      reject(<span class="hljs-literal">false</span>);
+  });
+});
+};
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> getStore = key =&gt; {
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve, reject) =&gt; {
+  <span class="hljs-keyword">if</span> (!(key &amp;&amp; <span class="hljs-keyword">typeof</span> key === <span class="hljs-string">&apos;string&apos;</span>)) <span class="hljs-keyword">return</span>;
+  AsyncStorage.getItem(key, (err, value) =&gt; {
+    <span class="hljs-keyword">if</span> (!err) {
+      resolve(<span class="hljs-built_in">JSON</span>.parse(value));
+    } <span class="hljs-keyword">else</span> {
+      reject(<span class="hljs-literal">null</span>);
+    }
+  });
+});
+}
+</code></pre>
 </li>
-<li><strong>-webkit-appearance: none;</strong> <blockquote>
-<p>&#x53BB;&#x9664;&#x79FB;&#x52A8;&#x7AEF;&#x82F9;&#x679C;&#x548C;&#x5B89;&#x5353;&#x9ED8;&#x8BA4;&#x6837;&#x5F0F;&#x4E0D;&#x4E00;&#x81F4;&#x95EE;&#x9898;</p>
-</blockquote>
+<li><p>React Native version: React Native @0.52</p>
+<p>&#x4E0A;&#x9762;&#x662F;&#x6211;&#x5C01;&#x88C5;&#x7684;&#x5B58;&#x50A8;&#x65B9;&#x6CD5;&#xFF0C;&#x5728;&#x7B2C;&#x4E00;&#x6B21;&#x9875;&#x9762;&#x6E32;&#x67D3;&#x7684;&#x65F6;&#x5019;&#x662F;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x4F60;&#x5728;&#x5199;&#x5176;&#x4ED6;&#x4EE3;&#x7801;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F60;&#x4EEC;&#x9875;&#x9762;&#x4F1A;onload&#x3002;&#x4E4B;&#x540E;&#x65B9;&#x6CD5;&#x5C31;&#x4E0D;&#x5728;&#x53BB;&#x6267;&#x884C;&#x3002;</p>
 </li>
-<li><strong>-webkit-font-smoothing: antialiased;</strong><blockquote>
-<p>&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x4F7F;&#x9875;&#x9762;&#x4E0A;&#x7684;&#x5B57;&#x4F53;&#x6297;&#x952F;&#x9F7F;,&#x4F7F;&#x7528;&#x540E;&#x5B57;&#x4F53;&#x770B;&#x8D77;&#x6765;&#x4F1A;&#x66F4;&#x6E05;&#x6670;</p>
-</blockquote>
+<li><p>&#x8FD9;&#x5E94;&#x8BE5;&#x662F;RN&#x4E2D;&#x4E00;&#x4E2A;bug</p>
+<h4 id="&#x6211;&#x4EEC;&#x5C31;&#x76F4;&#x5954;&#x4E3B;&#x9898;&#x76F4;&#x63A5;&#x51B3;&#x89E3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF1B;">&#x6211;&#x4EEC;&#x5C31;&#x76F4;&#x5954;&#x4E3B;&#x9898;&#x76F4;&#x63A5;&#x51B3;&#x89E3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF1B;</h4>
+</li>
+<li><p>&#x6211;&#x4EEC;&#x5728;&#x6211;&#x4EEC;&#x7684; Android/app/src/AndroidManifest.xml&#x6587;&#x4EF6;&#x4E2D;&#x5047;&#x5982;&#x4E00;&#x884C;&#x4EE3;&#x7801;&#xFF0C;</p>
+<pre><code class="lang-js">&lt;uses-permission android:name=<span class="hljs-string">&quot;android.permission.READ_EXTERNAL_STORAGE&quot;</span>/&gt;
+</code></pre>
+</li>
+<li><p>&#x8FD9;&#x6837;&#x5C31;&#x7ED9;&#x7A0B;&#x5E8F;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;&#x5E76;&#x884C;&#x6743;&#x9650;&#xFF0C;&#x95EE;&#x9898;&#x5E94;&#x8BE5;&#x5C31;&#x51B3;&#x89E3;&#x4E86;&#x3002;</p>
+</li>
+<li><p>&#x53C2;&#x8003;&#x8FDE;&#x63A5;&#xFF1A; </p>
+<ol>
+<li><a href="https://github.com/sunnylqm/react-native-storage/issues/147" target="_blank">&#x5B89;&#x5353;&#x673A;&#x4E0A;load&#x65E0;&#x6CD5;&#x4F7F;&#x7528;&#x7684;&#x95EE;&#x9898; #147</a></li>
+<li><a href="https://github.com/facebook/react-native/issues/14101#issuecomment-345563563" target="_blank">AsyncStorage not fulfilling promise on Android 7+ #14101</a></li>
+</ol>
 </li>
 </ul>
 
@@ -901,10 +943,10 @@
 
             
                 
-                
-                <a href="standard.html" class="navigation navigation-next navigation-unique" aria-label="Next page: CSS书写规范">
-                    <i class="fa fa-angle-right"></i>
+                <a href="android.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Android原生模块">
+                    <i class="fa fa-angle-left"></i>
                 </a>
+                
                 
             
         
@@ -913,7 +955,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"项目初始化样式","level":"1.3.1","depth":2,"next":{"title":"CSS书写规范","level":"1.3.2","depth":2,"path":"css/standard.md","ref":"./css/standard.md","articles":[]},"previous":{"title":"CSS","level":"1.3","depth":1,"ref":"","articles":[{"title":"项目初始化样式","level":"1.3.1","depth":2,"path":"css/init.md","ref":"./css/init.md","articles":[]},{"title":"CSS书写规范","level":"1.3.2","depth":2,"path":"css/standard.md","ref":"./css/standard.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"css/init.md","mtime":"2017-11-28T16:34:09.043Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-16T11:42:15.585Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"AsyncStorage 失效问题","level":"1.11.3","depth":2,"next":{"title":"React-Navigation","level":"1.12","depth":1,"ref":"","articles":[{"title":"navigation初始化路由","level":"1.12.1","depth":2,"path":"navigation/initial.md","ref":"./navigation/initial.md","articles":[]},{"title":"navigation实现路由跳转","level":"1.12.2","depth":2,"path":"navigation/link.md","ref":"./navigation/link.md","articles":[]}]},"previous":{"title":"Android原生模块","level":"1.11.2","depth":2,"path":"RN/android.md","ref":"./RN/android.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"RN/AsyncStorage.md","mtime":"2018-04-16T11:41:09.894Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-16T11:42:15.585Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
