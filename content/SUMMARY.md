@@ -33,6 +33,7 @@
 * react-native
   - [RN－icon配置](./RN/react-native-vector-icons.md)
   - [Android原生模块](./RN/android.md)
+  - [AsyncStorage 失效问题](./RN/AsyncStorage.md)
 * React-Navigation
   - [navigation初始化路由](./navigation/initial.md)
   - [navigation实现路由跳转](./navigation/link.md)
