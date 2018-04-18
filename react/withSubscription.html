@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>navigation实现路由跳转 · GitBook</title>
+        <title>react高阶组件 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -58,7 +58,7 @@
 
     
     
-    <link rel="prev" href="initial.html" />
+    <link rel="prev" href="syntax.html" />
     
 
     </head>
@@ -449,9 +449,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.9.1" data-path="../react/syntax.html">
+        <li class="chapter " data-level="1.9.1" data-path="syntax.html">
             
-                <a href="../react/syntax.html">
+                <a href="syntax.html">
             
                     
                     react语法编译
@@ -462,9 +462,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.2" data-path="../react/withSubscription.html">
+        <li class="chapter active" data-level="1.9.2" data-path="withSubscription.html">
             
-                <a href="../react/withSubscription.html">
+                <a href="withSubscription.html">
             
                     
                     react高阶组件
@@ -610,9 +610,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.12.1" data-path="initial.html">
+        <li class="chapter " data-level="1.12.1" data-path="../navigation/initial.html">
             
-                <a href="initial.html">
+                <a href="../navigation/initial.html">
             
                     
                     navigation初始化路由
@@ -623,9 +623,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.12.2" data-path="link.html">
+        <li class="chapter " data-level="1.12.2" data-path="../navigation/link.html">
             
-                <a href="link.html">
+                <a href="../navigation/link.html">
             
                     
                     navigation实现路由跳转
@@ -857,7 +857,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >navigation实现路由跳转</a>
+        <a href=".." >react高阶组件</a>
     </h1>
 </div>
 
@@ -872,45 +872,79 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="navigation&#x5B9E;&#x73B0;&#x8DEF;&#x7531;&#x8DF3;&#x8F6C;">navigation&#x5B9E;&#x73B0;&#x8DEF;&#x7531;&#x8DF3;&#x8F6C;</h3>
+                                <h3 id="react&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;">React&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;</h3>
 <ul>
-<li><p>&#x7ED9;&#x4E0A;&#x4E00;&#x8282;&#x8DEF;&#x7531;&#x9875;&#x9762;&#x6DFB;&#x52A0;&#x8DF3;&#x8F6C;&#x529F;&#x80FD;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
-<span class="hljs-keyword">import</span> { View, Text, Button } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-native&apos;</span>;
-
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">One</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
-  render() {
-    <span class="hljs-keyword">return</span> (
-      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>one page<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> 
-          <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;go to Tow&quot;</span>
-          <span class="hljs-attr">onPress</span>=<span class="hljs-string">{()</span> =&gt;</span> this.props.navigation.navigator(&apos;Two&apos;)}/&gt;
-      <span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span>
-    )
+<li><p>&#x5176;&#x5B9E;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;<a href="https://reactjs.org/" target="_blank">&#x5B98;&#x65B9;&#x6587;&#x6863;</a>&#x8BF4;&#x7684;&#x5176;&#x5B9E;&#x6BD4;&#x8F83;&#x8BE6;&#x7EC6;&#x7684;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;&#x5BB9;&#x5668;&#x7EC4;&#x4EF6;&#xFF0C; &#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x901A;&#x8FC7;props&#x4E4B;&#x95F4;&#x4F20;&#x9012;&#x6570;&#x636E;&#x3002;&#x4F46;&#x662F;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x4F18;&#x70B9;&#x548C;&#x4E0D;&#x540C;&#x4E4B;&#x5904;&#x3002;</p>
+<ol>
+<li>&#x7EC4;&#x4EF6;&#x662F;&#x5C06;props&#x8F6C;&#x5316;&#x6210;UI&#xFF0C;&#x7136;&#x800C;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x5C06;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF7;&#x8F6C;&#x5316;&#x6210;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x3002;&#x6CE8;&#x610F;&#x662F;&#x5F62;&#x6210;&#x4E86;&#x4E00;&#x4E2A;&#x65B0;&#x7EC4;&#x5EFA;&#x3002;</li>
+<li>&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x4E3B;&#x8981;&#x662F;&#x4E3A;&#x4E86;&#x5904;&#x7406;&#x903B;&#x8F91;&#x7684;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x6CE8;&#x91CD;UI&#x89C6;&#x56FE;&#x7684;&#x3002;</li>
+</ol>
+</li>
+<li><p>&#x5177;&#x4F53;&#x6765;&#x8BF4;&#xFF0C;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x80FD;&#x591F;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x7EC4;&#x4EF6;&#x3002;</p>
+<p>&#x8BDD;&#x4E0D;&#x591A;&#x8BF4;&#x76F4;&#x63A5;&#x5E16;&#x6211;&#x7684;&#x5DE5;&#x4F5C;&#x4EE3;&#x7801;&#x4E86;</p>
+</li>
+</ul>
+<ul>
+<li>WithSubscription.js
+```js
+import React, { Component } from &apos;react&apos;;
+import settings from &apos;../../config&apos;;
+import { getStore } from &apos;../../assets/utils/Utils&apos;;</li>
+</ul>
+<p>export default (WrappedComponent, url) =&gt; {
+  return class extends Component {
+    state = {
+      DiscountList: [],
+      Str: &apos;&apos;
+    }</p>
+<pre><code>componentDidMount = async () =&gt; {
+  let goodsInfo = await getStore(&apos;goodsInfo&apos;);
+  console.log(goodsInfo)
+  let list = goodsInfo.map(item =&gt; ({ goods_id: item.goods_id, attr_value: item.attr_value }));
+  let requestConfig = {
+    method: &apos;POST&apos;,
+    headers: {
+      &apos;Accept&apos;: &apos;application/json&apos;, //cros &#x4E0D;&#x4EC5;&#x63A5;&#x53D7;contenttype
+    },
+    body: JSON.stringify({ list })
+  };
+  let res = await fetch((settings.BaseUrl + url), requestConfig);
+  let data = await res.json();
+  if (data.status == 1) {
+    let Str = url.split(&apos;/&apos;).pop();
+    let DiscountList = data.data[0];
+    this.setState({ DiscountList, Str });
   }
 }
-</span></code></pre>
-<blockquote>
-<p>&#x6211;&#x4E5F;&#x4E0D;&#x662F;&#x5F88;&#x660E;&#x767D;&#x8FD9;&#x4E2A;this.props&#x91CC;&#x9762;&#x90FD;&#x662F;&#x5199;&#x4EC0;&#x4E48;&#x4E1C;&#x897F;&#x554A;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x5E94;&#x8BE5;&#x8F93;&#x51FA;&#x4E00;&#x4E0B;&#x770B;&#x4E00;&#x770B;&#x7684;
-&#x8F93;&#x51FA;&#x7684;&#x7ED3;&#x679C;&#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;</p>
+
+render() {
+  const { DiscountList } = this.state;
+  return (&lt;WrappedComponent Str={Str} DiscountList={DiscountList} /&gt;)
+}
+</code></pre><p>  }
+}</p>
+<pre><code>  &gt; &#x8FD9;&#x662F;&#x6211;&#x81EA;&#x5DF1;&#x7684;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x3002;&#x7EC4;&#x4EF6;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x901A;&#x8FC7;&#x4F20;&#x5165;UI&#x89C6;&#x56FE;&#x7EC4;&#x4EF6;&#xFF0C;&#x548C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x8BF7;&#x6C42;&#x6570;&#x636E;&#xFF0C;&#x5728;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x7684;&#x5904;&#x7406;&#x3002;&#x628A;UI&#x89C6;&#x56FE;&#x7EC4;&#x4EF6;&#x9700;&#x8981;&#x7684;&#x6570;&#x636E;&#x4F20;&#x9012;&#x4E0B;&#x53BB;&#x3002;
+
+  - Discount.js
+```js
+</code></pre><blockquote>
+<p>&#x8FD9;&#x662F;UI&#x89C6;&#x56FE;&#x7EC4;&#x4EF6;&#x3002;&#x6B64;&#x65F6;&#x6211;&#x8FD8;&#x6CA1;&#x6709;&#x5B8C;&#x6210;&#x7EC4;&#x4EF6;&#x5168;&#x90E8;&#x4EFB;&#x52A1;&#x3002;&#x5E0C;&#x671B;&#x4F60;&#x80FD;&#x7ED3;&#x5408;&#x5B98;&#x7F51;&#x6162;&#x6162;&#x7406;&#x89E3;&#x3002;UI&#x89C6;&#x56FE;&#x7EC4;&#x4EF6;&#x901A;&#x8FC7;&#x63A5;&#x6536;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x4F20;&#x9012;&#x8FC7;&#x6765;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x8FDB;&#x884C;&#x6E32;&#x67D3;UI&#x89C6;&#x56FE;</p>
 </blockquote>
-<pre><code class="lang-js">{ screenProps: <span class="hljs-literal">undefined</span>, navigation: {
-  dispatch: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">inputAction</span>)</span>{},
-  goBack: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">key</span>)</span>{},
-  navigate: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">routeName, params, action</span>)</span>{},
-  setParams: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">params</span>)</span>{},
-  state: {
-    key: <span class="hljs-string">&quot;Init-id-1521554322230-0&quot;</span>,
-    routeName: <span class="hljs-string">&quot;Two&quot;</span>
-  }
-}}
-</code></pre>
+<ul>
+<li>Coupon.js
+```js</li>
+</ul>
+<p>```</p>
 <blockquote>
-<p>&#x5BF9;&#x8C61;&#x4E0B;&#x5F88;&#x591A;&#x65B9;&#x6CD5;&#xFF0C;&#x548C;&#x5C5E;&#x6027;&#x3002;&#x7B49;&#x5B9E;&#x8DF5;&#x8FC7;&#x5C31;&#x6765;&#x89E3;&#x91CA;&#x4E00;&#x4E0B;</p>
+<p>&#x8FD9;&#x662F;&#x5BB9;&#x5668;&#x7EC4;&#x4EF6;&#x3002;&#x901A;&#x8FC7;WithSubscription&#x65B9;&#x6CD5;&#x7684;&#x8C03;&#x7528;&#xFF0C;&#x4F20;&#x9012;&#x4E00;&#x4E2A;&#x89C6;&#x56FE;&#x7EC4;&#x4EF6;Discount&#x548C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x7EC4;&#x4EF6;&#x3002;&#x65B0;&#x7EC4;&#x5EFA;&#x88AB;&#x6E32;&#x67D3;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x4E2D;&#x7684;&#x7C7B;&#x65B9;&#x6CD5;&#x5C31;&#x56DE;&#x53BB;&#x6267;&#x884C;&#x3002;UI&#x6E32;&#x67D3;&#x3001;&#x6570;&#x636E;&#x5C55;&#x793A;&#x5230;&#x6B64;&#x4E5F;&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x3002;</p>
 </blockquote>
+<ul>
+<li><p>redux&#x4E2D;&#x5F88;&#x591A;&#x5730;&#x65B9;&#x90FD;&#x662F;&#x4F7F;&#x7528;&#x7684;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x3002;&#x7B49;&#x5F85;&#x7814;&#x7A76;</p>
+<ul>
+<li>&#x53C2;&#x8003;&#x6587;&#x732E;&#xFF1A;
+<a href="https://juejin.im/post/59eb26e951882578c6738fb0" target="_blank">&#x6DF1;&#x5165;&#x7406;&#x89E3;React &#x9AD8;&#x9636;&#x7EC4;&#x4EF6;</a></li>
+</ul>
 </li>
-<li>navigate&#x7B2C;&#x4E00;&#x4E2A;&#x5355;&#x6570;routeName&#xFF0C;&#x660E;&#x663E;&#x5C31;&#x662F;&#x8DEF;&#x7531;url&#x4E86;&#xFF0C; &#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;params&#x5C31;&#x662F;&#x4F60;&#x60F3;&#x81EA;&#x5DF1;&#x4F20;&#x9012;&#x7684;&#x6570;&#x636E;&#x4E86;.&#x5F53;&#x70B9;&#x51FB;&#x8DEF;&#x7531;&#x8DF3;&#x8F6C;&#x5230;&#x4F60;&#x4F20;&#x9012;&#x53C2;&#x6570;&#x7684;&#x8DEF;&#x7531;&#x65F6;&#x5019;&#x3002;&#x4F60;&#x4FBF;&#x53EF;&#x4EE5;&#x4ECE;this.props.navigation.state.params&#x4E2D;&#x83B7;&#x53D6;&#x4F20;&#x9012;&#x8FC7;&#x6765;&#x7684;&#x53C2;&#x6570;&#x4E86;&#x3002;</li>
 </ul>
 
                                 
@@ -939,7 +973,7 @@
 
             
                 
-                <a href="initial.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: navigation初始化路由">
+                <a href="syntax.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: react语法编译">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -951,7 +985,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"navigation实现路由跳转","level":"1.12.2","depth":2,"next":{"title":"项目积累","level":"1.13","depth":1,"ref":"","articles":[{"title":"VUE项目积累","level":"1.13.1","depth":2,"ref":"","articles":[{"title":"结构目录","level":"1.13.1.1","depth":3,"path":"project/vue/1.md","ref":"./project/vue/1.md","articles":[]}]},{"title":"移动端IOS和Android兼容问题","level":"1.13.2","depth":2,"ref":"","articles":[{"title":"兼容问题","level":"1.13.2.1","depth":3,"path":"Android/date.md","ref":"./Android/date.md","articles":[]}]}]},"previous":{"title":"navigation初始化路由","level":"1.12.1","depth":2,"path":"navigation/initial.md","ref":"./navigation/initial.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"navigation/link.md","mtime":"2018-03-20T14:52:10.145Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-18T16:03:54.779Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"react高阶组件","level":"1.9.2","depth":2,"next":{"title":"redux","level":"1.10","depth":1,"ref":"","articles":[{"title":"redux介绍与环境准备","level":"1.10.1","depth":2,"path":"redux/redux_start.md","ref":"./redux/redux_start.md","articles":[]},{"title":"react中state的使用","level":"1.10.2","depth":2,"path":"redux/redux_state.md","ref":"./redux/redux_state.md","articles":[]},{"title":"store数据传递和修改","level":"1.10.3","depth":2,"path":"redux/redux_store.md","ref":"./redux/redux_store.md","articles":[]}]},"previous":{"title":"react语法编译","level":"1.9.1","depth":2,"path":"react/syntax.md","ref":"./react/syntax.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"react/withSubscription.md","mtime":"2018-04-18T16:03:43.468Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-18T16:03:54.779Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
