@@ -26,7 +26,7 @@
   - [fetch延时](./es6/Promise.md)
 * react
   - [react语法编译](./react/syntax.md)
-  - [react高阶组件](./react/WithSubscription.md)
+  - [react高阶组件](./react/withSubscription.md)
 * redux
   - [redux介绍与环境准备](./redux/redux_start.md)
   - [react中state的使用](./redux/redux_state.md)
