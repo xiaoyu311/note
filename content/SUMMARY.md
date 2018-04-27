@@ -38,6 +38,7 @@
 * React-Navigation
   - [navigation初始化路由](./navigation/initial.md)
   - [navigation实现路由跳转](./navigation/link.md)
+  - [StackNavigator自定义动画](./navigation/StackNavigator.md)
 * 项目积累
   - VUE项目积累
     - [结构目录](./project/vue/1.md)
