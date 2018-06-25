@@ -2,7 +2,7 @@
 
 * [Introduction](README.md)
 * HTML
-  - [HTML5表单新特性](./html/input.md)
+  - [doctype声明](./html/doctype.md)
   - [HTML新标签](./html/newEle.md)
 * CSS
   - [项目初始化样式](./css/init.md)
