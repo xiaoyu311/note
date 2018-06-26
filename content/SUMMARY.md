@@ -9,6 +9,7 @@
   - [项目初始化样式](./css/init.md)
   - [CSS书写规范](./css/standard.md)
 * JS
+  - [JavaScript之原型](./JS/prototype.md)
   - [location介绍](./JS/location.md)
   - [screen对象](./JS/screen.md)
   - [获取原生css属性](./JS/attr.md)
