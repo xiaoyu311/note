@@ -10,6 +10,7 @@
   - [CSS书写规范](./css/standard.md)
 * JS
   - [JavaScript之原型](./JS/prototype.md)
+  - [JavaScript之静态作用域(词法作用域)](./JS/scoping.md)
   - [location介绍](./JS/location.md)
   - [screen对象](./JS/screen.md)
   - [获取原生css属性](./JS/attr.md)
