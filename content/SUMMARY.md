@@ -4,6 +4,7 @@
 * HTML
   - [doctype声明](./html/doctype.md)
   - [HTML meta](./html/meta.md)
+  - [页面优化](./html/highPerformance.md)
 * CSS
   - [项目初始化样式](./css/init.md)
   - [CSS书写规范](./css/standard.md)
