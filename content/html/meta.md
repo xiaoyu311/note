@@ -11,17 +11,17 @@
   #### 简介
   
 
-  <font size=2>在查阅w3school中，第一句话中的“元数据”就让我开始了Google之旅。然后很顺利的在英文版的w3school找到了想要的结果。（中文w3school说的是元信息，Google和百度都没有相关的词条。但元数据在Google就有详细解释。所以这儿采用英文版W3school的解释。）</font>
+  <font size=3>在查阅w3school中，第一句话中的“元数据”就让我开始了Google之旅。然后很顺利的在英文版的w3school找到了想要的结果。（中文w3school说的是元信息，Google和百度都没有相关的词条。但元数据在Google就有详细解释。所以这儿采用英文版W3school的解释。）</font>
 
   > <font size=2 color='0099ff'>The <meta> tag provides metadata about the HTML document. Metadata will not be displayed on the page, but will be machine parsable.</font>
 
-  <font size=2>不难看出，其中的关键是metadata，中文名叫元数据，是用于描述数据的数据。它不会显示在页面上，但是机器却可以识别。这么一来meta标签的作用方式就很好理解了。</font>
+  <font size=3>不难看出，其中的关键是metadata，中文名叫元数据，是用于描述数据的数据。它不会显示在页面上，但是机器却可以识别。这么一来meta标签的作用方式就很好理解了。</font>
 
   #### 用处
 
   > <font size=2 color='0099ff'>Meta elements are typically used to specify page description, keywords, author of the document, last modified, and other metadata.</font>
 
-  <font size=2>这句话对meta标签用处的介绍，简洁明了。翻译过来就是：meta常用于定义页面的说明，关键字，最后修改日期，和其它的元数据。这些元数据将服务于浏览器（如何布局或重载页面），搜索引擎和其它网络服务。</font>
+  <font size=3>这句话对meta标签用处的介绍，简洁明了。翻译过来就是：meta常用于定义页面的说明，关键字，最后修改日期，和其它的元数据。这些元数据将服务于浏览器（如何布局或重载页面），搜索引擎和其它网络服务。</font>
 
   #### 组成
   <hr>
@@ -29,17 +29,17 @@
 
   <h5>1. name属性</h5>
 
-  <font size=2>name属性主要用于描述网页，比如网页的关键词，叙述等。与之对应的属性值为content，content中的内容是对name填入类型的具体描述，便于搜索引擎抓取。
+  <font size=3>name属性主要用于描述网页，比如网页的关键词，叙述等。与之对应的属性值为content，content中的内容是对name填入类型的具体描述，便于搜索引擎抓取。
   meta标签中name属性语法格式是：</fon>
 
   ```html
     <meta name="参数" content="具体的描述">。
   ```
-  <font size=2>其中name属性共有以下几种参数。**(A-C为常用属性)**</font>
+  <font size=3>其中name属性共有以下几种参数。**(A-C为常用属性)**</font>
 
   ***A. keywords(关键字)***
 
-  <font size=2>说明：用于告诉搜索引擎，你网页的关键字。
+  <font size=3>说明：用于告诉搜索引擎，你网页的关键字。
   举例：</font>
 
   ```html
@@ -48,7 +48,7 @@
 
   ***B. description(网站内容的描述)***
 
-  <font size=2>说明：用于告诉搜索引擎，你网站的主要内容。
+  <font size=3>说明：用于告诉搜索引擎，你网站的主要内容。
   举例：</font>
 
   ```html
@@ -57,7 +57,7 @@
 
   ***C. viewport(移动端的窗口)***
 
-  <font size=2>说明：这个概念较为复杂，具体的会在下篇博文中讲述。这个属性常用于设计移动端网页。在用bootstrap,AmazeUI等框架时候都有用过viewport。
+  <font size=3>说明：这个概念较为复杂，具体的会在下篇博文中讲述。这个属性常用于设计移动端网页。在用bootstrap,AmazeUI等框架时候都有用过viewport。
   举例（常用范例）：</font>
 
   ```html
@@ -66,14 +66,14 @@
   
   ***D. robots(定义搜索引擎爬虫的索引方式)***
 
-  <font size=2>说明：robots用来告诉爬虫哪些页面需要索引，哪些页面不需要索引。content的参数有all,none,index,noindex,follow,nofollow。默认是all。
+  <font size=3>说明：robots用来告诉爬虫哪些页面需要索引，哪些页面不需要索引。content的参数有all,none,index,noindex,follow,nofollow。默认是all。
   举例：</font>
 
   ```html
     <meta name="robots" content="none"> 
   ```
 
-  <font size=2>具体参数如下：</font>
+  <font size=3>具体参数如下：</font>
 
   <font size=2 color='LightSlateBlue'>1. none : 搜索引擎将忽略此网页，等价于noindex，nofollow。</font>
   <font size=2 color='LightSlateBlue'>2. noindex : 搜索引擎不索引此网页。</font>
@@ -84,7 +84,7 @@
 
   ***E. author(作者)***
 
-  <font size=2>说明：用于标注网页作者
+  <font size=3>说明：用于标注网页作者
   举例：</font>
 
   ```html
@@ -93,7 +93,7 @@
 
   ***F. copyright(版权)***
 
-  <font size=2>说明：用于标注版权信息
+  <font size=3>说明：用于标注版权信息
   举例：</font>
 
   ```html
@@ -106,7 +106,7 @@
 
   ***A. content-Type(设定网页字符集)(推荐使用HTML5的方式)***
 
-  <font size=2>说明：用于设定网页字符集，便于浏览器解析与渲染页面
+  <font size=3>说明：用于设定网页字符集，便于浏览器解析与渲染页面
   举例：</font>
 
   ```html
@@ -116,7 +116,7 @@
 
   ***B. X-UA-Compatible(浏览器采取何种版本渲染当前页面)***
 
-  <font size=2>说明：用于告知浏览器以何种版本来渲染页面。（一般都设置为最新模式，在各大框架中这个设置也很常见。）
+  <font size=3>说明：用于告知浏览器以何种版本来渲染页面。（一般都设置为最新模式，在各大框架中这个设置也很常见。）
   举例：</font>
 
   ```html
@@ -125,7 +125,7 @@
 
   ***C. cache-control(指定请求和响应遵循的缓存机制)***
 
-  <font size=2>用法1.
+  <font size=3>用法1.
   说明：指导浏览器如何缓存某个响应以及缓存多长时间。这一段内容我在网上找了很久，但都没有找到满意的。最后终于在Google Developers中发现了我想要的答案。</font>
 
   > ![imgae](http://7xoxxe.com1.z0.glb.clouddn.com/cache.png)
@@ -134,7 +134,7 @@
     <meta http-equiv="cache-control" content="no-cache">
   ```
 
-  <font size=2>共有以下几种用法：</font>
+  <font size=3>共有以下几种用法：</font>
   <font size=2 color='LightSlateBlue'>1. no-cache: 先发送请求，与服务器确认该资源是否被更改，如果未被更改，则使用缓存。</font>
   <font size=2 color='LightSlateBlue'>2. no-store: 不允许缓存，每次都要去服务器上，下载完整的响应。（安全措施）</font>
   <font size=2 color='LightSlateBlue'>3. public : 缓存所有响应，但并非必须。因为max-age也可以做到相同效果</font>
@@ -143,7 +143,7 @@
 
   ***D. expires(网页到期时间)***
 
-  <font size=2>说明:用于设定网页的到期时间，过期后网页必须到服务器上重新传输。
+  <font size=3>说明:用于设定网页的到期时间，过期后网页必须到服务器上重新传输。
   举例</font>
 
   ```html
@@ -152,7 +152,7 @@
 
   ***E. refresh(自动刷新并指向某页面)***
 
-  <font size=2>说明：网页将在设定的时间内，自动刷新并调向设定的网址。
+  <font size=3>说明：网页将在设定的时间内，自动刷新并调向设定的网址。
   举例:</font>
 
   ```html
@@ -161,7 +161,7 @@
 
   ***F. Set-Cookie(cookie设定)***
 
-  <font size=2>说明：如果网页过期。那么这个网页存在本地的cookies也会被自动删除。</font>
+  <font size=3>说明：如果网页过期。那么这个网页存在本地的cookies也会被自动删除。</font>
 
   ```html
     <meta http-equiv="Set-Cookie" content="name, date"> //格式
