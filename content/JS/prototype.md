@@ -29,7 +29,7 @@
   
   <font size=2>让我们用一张图表示构造函数和实例原型之间的关系：</font>
 
-  ![prototype](../../images/prototype1.png)
+  ![prototype](/images/prototype1.png)
 
   <font size=2>在这张图中我们用 Object.prototype 表示实例原型。<br>
   那么我们该怎么表示实例与实例原型，也就是 person 和 Person.prototype 之间的关系呢，这时候我们就要讲到第二个属性：</font>
@@ -47,7 +47,7 @@
 
   <font size=2>于是我们更新下关系图：</font>
 
-  ![prototype2](../../images/prototype2.png)
+  ![prototype2](/images/prototype2.png)
 
   <font size=2>既然实例对象和构造函数都可以指向原型，那么原型是否有属性指向构造函数或者实例呢？</font>
 
@@ -63,7 +63,7 @@
 
   <font size=2>所以再更新下关系图：</font>
 
-  ![prototype3](../../images/prototype3.png)
+  ![prototype3](/images/prototype3.png)
 
   <font size=2>综上我们已经得出：</font>
 
@@ -118,7 +118,7 @@
 
   <font size=2>其实原型对象就是通过 Object 构造函数生成的，结合之前所讲，实例的 __proto __ 指向构造函数的 prototype ，所以我们再更新下关系图：</font>
 
-  ![prototype4](../../images/prototype4.png)
+  ![prototype4](/images/prototype4.png)
 
   ##### 原型链
 
@@ -137,7 +137,7 @@
   最后一张关系图也可以更新为：</font>
 
 
-  ![prototype5](../../images/prototype5.png)
+  ![prototype5](/images/prototype5.png)
 
   <font size=2>顺便还要说一下，图中由相互关联的原型组成的链状结构就是原型链，也就是蓝色的这条线。</font>
 

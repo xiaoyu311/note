@@ -31,10 +31,10 @@
   <font size=2>不同的浏览器内核不同，所以渲染过程不太一样。</font>
   <br>
 
-  ![WebKit 主流程](../../images/2351517245-5972085e433ea_articlex.png)
+  ![WebKit 主流程](/images/2351517245-5972085e433ea_articlex.png)
   <font size=2>WebKit 主流程</font>
 
-  ![Mozilla 的 Gecko 呈现引擎主流程](../../images/2351517245-5972085e433ea_articlex.png)
+  ![Mozilla 的 Gecko 呈现引擎主流程](/images/2351517245-5972085e433ea_articlex.png)
   <font size=2>Mozilla 的 Gecko 呈现引擎主流程</font>
 
   <font size=2>由上面两张图可以看出，虽然主流浏览器渲染过程叫法有区别，但是主要流程还是相同的。Gecko 将视觉格式化元素组成的树称为“框架树”。每个元素都是一个框架。WebKit 使用的术语是“呈现树”，它由“呈现对象”组成。对于元素的放置，WebKit 使用的术语是“布局”，而 Gecko 称之为“重排”。对于连接 DOM 节点和可视化信息从而创建呈现树的过程，WebKit 使用的术语是“附加”。</font>
@@ -71,7 +71,7 @@
   ```
   <font size=2>经过解析之后的DOM Tree差不多就是</font>
 
-  ![HTML Parser](../../images/1355879024-573db51949951_articlex.png)
+  ![HTML Parser](/images/1355879024-573db51949951_articlex.png)
   <font size=2>将文本的HTML文档，提炼出关键信息，嵌套层级的树形结构，便于计算拓展。这就是HTML Parser的作用。</font>
 
   <h4>CSS解析</h4>
@@ -80,7 +80,7 @@
   <font size=2>CSS Parser将CSS解析成Style Rules，Style Rules也叫CSSOM（CSS Object Model）。
   StyleRules也是一个树形结构，根据CSS文件整理出来的类似DOM Tree的树形结构：</font>
 
-  ![Style Rules](../../images/3760570497-573dbf4cd0b79_articlex.png)
+  ![Style Rules](/images/3760570497-573dbf4cd0b79_articlex.png)
 
   <font size=2>于HTML Parser相似，CSS Parser作用就是将很多个CSS文件中的样式合并解析出具有树形结构Style Rules。</font>
 
@@ -99,7 +99,7 @@
 
   > <font size=2>在 WebKit 中，解析样式和创建呈现器的过程称为“附加”。每个 DOM 节点都有一个“attach”方法。附加是同步进行的，将节点插入 DOM 树需要调用新的节点“attach”方法。</font>
 
-  ![Render Tree](../../images/131290638-5741b1b17b95f_articlex.png)
+  ![Render Tree](/images/131290638-5741b1b17b95f_articlex.png)
 
   <h4>样式计算</h4>
   <hr>
@@ -120,7 +120,7 @@
 
   <font size=2>为了简化样式计算，Firefox 还采用了另外两种树：规则树和样式上下文树。WebKit 也有样式对象，但它们不是保存在类似样式上下文树这样的树结构中，只是由 DOM 节点指向此类对象的相关样式。</font>
 
-  ![Firefox](../../images/2440709143-574051b3609f9_articlex.png)
+  ![Firefox](/images/2440709143-574051b3609f9_articlex.png)
 
   <font size=2>样式上下文包含端值。要计算出这些值，应按照正确顺序应用所有的匹配规则，并将其从逻辑值转化为具体的值。
   例如，**如果逻辑值是屏幕大小的百分比，则需要换算成绝对的单位**规则树的点子真的很巧妙，它使得节点之间可以共享这些值，以避免重复计算，还可以节约空间。
@@ -156,7 +156,7 @@
 
   <font size=2>则CSS形成的规则树如下图所示（节点的标记方式为“节点名 : 指向的规则序号”）</font>
 
-  ![css rules](../../images/2422532768-59720de08c383_articlex.png)
+  ![css rules](/images/2422532768-59720de08c383_articlex.png)
 
   <font size=2>假设我们解析 HTML 时遇到了第二个 **<div>** 标记，我们需要为此节点创建样式上下文，并填充其样式结构。 
   经过规则匹配，我们发现该 <div> 的匹配规则是第 1、2 和 6 条。这意味着规则树中已有一条路径可供我们的元素使用，我们只需要再为其添加一个节点以匹配第 6 条规则（规则树中的 F 节点）。 <br>
@@ -168,7 +168,7 @@
   对于包含了继承自父代的规则的结构，缓存是在上下文树中进行的（事实上 color 属性是继承的，但是 Firefox 将其视为 reset 属性，并缓存到规则树上）
   所以生成的上下文树如下：</font>
 
-  ![reset](../../images/1546987717-59720e2e59d0d_articlex.png)
+  ![reset](/images/1546987717-59720e2e59d0d_articlex.png)
 
   <h4>以正确的层叠顺序应用规则</h4>
   <hr>
@@ -293,7 +293,7 @@
   <hr>
   <font size=2>页面的渲染详细过程可以通过chrome开发者工具中的timeline查看</font>
 
-  ![test](../../images/2676259461-5972118198e52_articlex.png)
+  ![test](/images/2676259461-5972118198e52_articlex.png)
 
   1. <font size=2>发起请求；</font>
 
