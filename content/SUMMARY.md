@@ -34,6 +34,8 @@
   - [redux介绍与环境准备](./redux/redux_start.md)
   - [react中state的使用](./redux/redux_state.md)
   - [store数据传递和修改](./redux/redux_store.md)
+* RegExp
+  - [正则表达式学习](./RegExp/index.md)
 * react-native
   - [RN－icon配置](./RN/react-native-vector-icons.md)
   - [Android原生模块](./RN/android.md)
