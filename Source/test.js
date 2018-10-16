@@ -1,18 +1,30 @@
-const MyPromise = require('./promise');
+// const MyPromise = require('./promise');
 
-let p = new MyPromise((resolve, reject) => {
-  setTimeout(() => {
-    resolve('11')
-  }, 1000)
-})
-let p1 = new MyPromise((resolve, reject) => {
-  setTimeout(() => {
-    resolve('22')
-  }, 2000)
-})
+// let test = () => {
+//   console.log('test')
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve('first')
+//     })
+//   })
+// }
 
-console.time('test')
-MyPromise.all([p, p1]).then(res => {
-  console.log(res)
-  console.timeEnd('test')
-})
+// test().then(res => {
+//   console.log(res, 'test first then')
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve('second')
+//     })
+//   })
+// }).then(res => {
+//   console.log(res, 'test second then')
+// })
+
+const {EventEmitter} = require('events');
+const event = new EventEmitter()
+console.log(event)
+
+event.on('test', () => {
+  console.log(this)
+});
+event.emit('test', 'ds')
