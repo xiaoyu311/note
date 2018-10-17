@@ -10,15 +10,16 @@
 
 <body>
   <script>
+    let test = function fun (a) {
+      console.log(test)
+      if (a > 0) {
+        test(a - 1)
+      } else {
+        return;
+      }
 
-    function one() {
-      // with(location) {
-      //   var href = href;
-      // }
-      // console.log(href)
-      // return href;
     }
-    one()
+    test(1)
   </script>
 </body>
 
