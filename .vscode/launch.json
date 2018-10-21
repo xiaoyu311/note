@@ -9,7 +9,7 @@
       "type": "node",
       "request": "launch",
       "name": "Node",
-      "program": "${workspaceFolder}/Source/event.js"
+      "program": "${workspaceFolder}/Source/fs/Traversing.js"
     },
     {
       "type": "node",
