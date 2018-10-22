@@ -20,6 +20,21 @@ const preDeep = (dir, callback) => {
     }(0);
   })
 }
-preDeep(path.resolve(__dirname, 'a'), () => {
-  console.log('wanchng')
-});
+// preDeep(path.resolve(__dirname, 'a'), () => {
+//   console.log('wanchng')
+// });
+
+// 同步广度优先遍历 (广度优先 一般就会维护一个数组)
+const wide = dir => {
+  const arr = [dir];
+  while (arr.length > 0) {
+    const current = arr.shift();
+    console.log(current)
+    const stat = fs.statSync(current);
+    if (stat.isDirectory()) {
+      const files = fs.readdirSync(current);
+      files.forEach(item => arr.push(path.join(current, item)));
+    }
+  }
+}
+wide(path.resolve(__dirname, 'a'));
