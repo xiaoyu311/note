@@ -9,8 +9,7 @@
 </head>
 
 <body>
-  <div id="one">
-    one
+  <div data-test="left" onclick="ss" class="one two one " style="width: 100px;height: 100px;" id="one">
     <span>test</span>
   </div>
   <div class="two">
@@ -18,7 +17,8 @@
   </div>
   <script>
     const el = document.getElementById('one')
-console.dir(el)
+    el.classList.toggle('one')
+    console.log(el.classList)
   </script>
 </body>
 
