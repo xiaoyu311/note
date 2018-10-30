@@ -23,6 +23,8 @@
   },
   "homepage": "https://github.com/xiaoyu311/note#readme",
   "dependencies": {
-    "gh-pages": "^1.0.0"
+    "express": "^4.16.4",
+    "gh-pages": "^1.0.0",
+    "mime": "^2.3.1"
   }
 }

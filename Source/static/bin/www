@@ -1,0 +1,27 @@
+#! /usr/bin/env node
+const yargs = require('yargs');
+const Server = require('../src/app.js');
+
+const argv = yargs.option('d', {
+  alias: 'root', // 别名
+  demand: 'false', // 是否必填
+  type: 'string',
+  default: process.cwd(),
+  description: '请配置静态文件根目录'
+}).option('o', {
+  alias: 'host', // 别名
+  demand: 'false', // 是否必填
+  type: 'string',
+  default: 'localhost',
+  description: '请配置监听主机'
+}).option('p', {
+  alias: 'port',
+  demand: 'false',
+  type: 'string',
+  default: 8080,
+  description: '请配置端口'
+}).usage('server -d / -p 9090 -o localhost').help('h').argv;
+
+// argv = {d, root, host, p, port}
+const server = new Server(argv);
+server.start();

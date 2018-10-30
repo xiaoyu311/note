@@ -1,0 +1,23 @@
+{
+  "name": "static",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "server": "bin/www"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "debug": "^4.1.0",
+    "handlebars": "^4.0.12",
+    "nodemon": "^1.18.5",
+    "yargs": "^12.0.2"
+  }
+}

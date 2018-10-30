@@ -9,7 +9,7 @@
       "type": "node",
       "request": "launch",
       "name": "Node",
-      "program": "${workspaceFolder}/Source/stream/pipe.js"
+      "program": "${workspaceFolder}/Source/http/server.js"
     },
     {
       "type": "node",

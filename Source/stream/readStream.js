@@ -43,6 +43,7 @@ class ReadStream extends EventEmitter {
       }
     });
   }
+  // 流动模式
   read() {
     if (typeof this.fd != 'number') {
       return this.once('open', () => this.read());
