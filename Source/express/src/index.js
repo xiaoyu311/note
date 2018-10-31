@@ -30,11 +30,25 @@ const createApplication = () => {
           } else {
             next();
           }
-        } else {
-          if ((route.method == req.method.toLowerCase() || route.method == 'all') && (route.path == pathname || route.path == '*')) {
-            return route.handler(req, res);
+        } else { // 路由
+          if (route.paramsNames) { // 有路径参数
+            const matchers = pathname.match(route.path);
+            if (matchers) {
+              const params = {};
+              for (let i = 0; i < route.paramsNames.length; i++) {
+                params[route.paramsNames[i]] = matchers[i + 1];
+              }
+              req.params = params;
+              route.handler(req, res);
+            } else {
+              next();
+            }
           } else {
-            next();
+            if ((route.method == req.method.toLowerCase() || route.method == 'all') && (route.path == pathname || route.path == '*')) {
+              return route.handler(req, res);
+            } else {
+              next();
+            }
           }
         }
       }
@@ -53,11 +67,23 @@ const createApplication = () => {
   methods.forEach(method => {
     method = method.toLowerCase();
     app[method] = (path, handler) => {
-      app.routes.push({
-        method,
-        path,
-        handler
-      });
+      // 一层
+      const layer = { method, path, handler };
+      if (path.includes(':')) {
+        let paramsNames = [];
+        // 1.replace 把原来点路径专成正则表达式
+        // 2.提取变量名
+        path = path.replace(/:([^\/]+)/g, (...rest) => {
+          paramsNames.push(rest[1]);
+          return '([^\/]+)';
+        });
+        // path = /user/([^/]+)/([^/]+)
+        layer.path = new RegExp(path); // 路径变成正则表达式
+        layer.paramsNames = paramsNames; // 变量名数组
+        // console.log(layer.path)
+      }
+      // 普通layer有3个属性， 包含：的有四个属性
+      app.routes.push(layer);
     }
   });
 
@@ -72,6 +98,15 @@ const createApplication = () => {
       handler,
     });
   }
+
+  // 系统内置中间件
+  app.use((req, res, next) => {
+    const urlObj = url.parse(req.url, true);
+    req.query = urlObj.query;
+    req.path = urlObj.path;
+    req.hostname = req.headers['host'].split(':')[0];
+    next();
+  })
   return app;
 }
 
